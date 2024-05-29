@@ -33,7 +33,7 @@
 </nav><!-- #site-navigation -->
 
 <nav id="site-navigation-mobile" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e('Primary', 'kyodai'); ?>">
-    <div class="mobile-menu-button">    
+    <div class="mobile-menu-button">
         <span></span>
         <span></span>
         <span></span>
@@ -41,21 +41,26 @@
     <div class="site-branding">
         <?php the_custom_logo(); ?>
     </div><!-- .site-branding -->
-    <div id="right-menu" class="menu">
+    <div class="right-menu" class="menu">
         <ul>
-        <li><a href="https://www.instagram.com/kyodaiprint/?hl=fr">
+            <li><a href="https://www.instagram.com/kyodaiprint/?hl=fr">
                     <div class="instagram"></div>
                 </a></li>
         </ul>
     </div>
     <div class="left-menu">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary_menu',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</div>
+        <?php
+        wp_nav_menu(
+            array(
+                'theme_location' => 'mobile_menu',
+                'menu_id'        => 'mobile-menu',
+            )
+        );
+        ?>
+        <span class="fig-container-mobile">
+            <a href="/">
+                <div class="fig"></div>
+            </a>
+        </span>
+    </div>
 </nav><!-- #site-navigation -->

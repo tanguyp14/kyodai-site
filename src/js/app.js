@@ -1,17 +1,20 @@
-( function( $ ) {
+(function ($) {
 
-    $('document').ready(function(){
+    $('document').ready(function () {
         // Burger nav
-        $('.menu-toggle').on('click', function(){
-            $('header').toggleClass('header--menu-is-open');
-            // Toggle aria-expanded attribute on click
-            $('.main-navigation').toggleClass('menu-is-open');
+        $('.mobile-menu-button').click(function () {
+            $(this).toggleClass('open');
+            $('.left-menu').toggleClass('open');
+        });
+        $('#main-content').click(function () {
+            $('.mobile-menu-button').removeClass('open');
+            $('.left-menu').removeClass('open');
         });
         // Do things...
     });
 
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         // Do things...
     });
 
-}( jQuery ) );
+}(jQuery));

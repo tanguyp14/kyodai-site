@@ -10,7 +10,7 @@
 }
 
 .instagram {
-    background-image: url('../image/instagram.png');
+    background-image: url('../image/instagram.svg');
     height: 25px;
     width: 25px;
     background-size: cover;
@@ -21,9 +21,9 @@
 }
 
 .fig {
-    background-image: url('../image/fig.png');
+    background-image: url('../image/fig.svg');
     height: 20px;
-    width: 37px;
+    width: 36px;
     background-size: cover;
 }
 
@@ -37,28 +37,4 @@
 
 .fig-container:not(:hover) {
     animation: bump-out 0.5s forwards; /* Animation pour revenir à l'état initial */
-}
-
-@keyframes bump {
-    0% {
-        transform: translateY(0) rotate(5deg);
-    }
-    50% {
-        transform: translateY(-15px) rotate(-5deg);
-    }
-    100% {
-        transform: translateY(0) rotate(5deg);
-    }
-}
-
-@keyframes bump-out {
-    0% {
-        transform: translateY(0) rotate(5deg); /* État en fin de hover */
-    }
-    50% {
-        transform: translateY(-55px) rotate(-360deg) scale(1.2); /* État en fin de hover */
-    }
-    100% {
-        transform: translateY(0) rotate(0deg); /* État initial */
-    }
 }
