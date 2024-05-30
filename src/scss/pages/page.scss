@@ -1,0 +1,6 @@
+.is_full_page{
+    padding-top: 60px;
+    @include breakpoints(sm) {
+        padding-top : 200px;
+    }
+}

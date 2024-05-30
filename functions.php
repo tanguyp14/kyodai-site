@@ -71,3 +71,19 @@ function kyodai_new_wp_login_url() {
 	return home_url();
 }
 add_filter('login_headerurl', 'kyodai_new_wp_login_url');
+
+
+
+/**
+ * Format a given value by removing uppercase letters, replacing spaces with dashes, and replacing single quotes with underscores.
+ *
+ * @param string $value The value to format.
+ * @return string The formatted value.
+ */
+function formatValue($value) {
+	$formattedValue = strtolower($value); // Convert to lowercase
+	$formattedValue = str_replace(' ', '-', $formattedValue); // Replace spaces with dashes
+	$formattedValue = str_replace("'", '_', $formattedValue); // Replace single quotes with underscores
+
+	return $formattedValue;
+}

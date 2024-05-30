@@ -1,0 +1,64 @@
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    z-index: 1000;
+
+    .bottom-bar {
+        width: auto;
+        background-color: $black;
+        border-radius: $border-radius;
+        padding: 0px 20px;
+        color: $white;
+
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
+
+.back-top {
+    position: fixed;
+    right: 20px;
+    bottom: -25px;
+    z-index: 999;
+    background-color: $black;
+    color: $white;
+    border-radius: $border-radius;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+
+    &:visited {
+        color: $white;
+    }
+
+    &:hover {
+        background-color: $red;
+
+        span {
+            width: 100%;
+            position: relative;
+            opacity: 1;
+        }
+    }
+
+    span {
+        position: absolute;
+        display: block;
+        width: 0px;
+        height: 1rem;
+        overflow: hidden;
+        opacity: 0;
+        transition: width 0.3s;
+    }
+
+    &.show {
+        bottom: 5px;
+    }
+}

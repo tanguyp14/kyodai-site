@@ -14,18 +14,6 @@
         width: 100%;
     }
 
-    @include breakpoints(sm, max) {
-        width: 100vw;
-        height: 50px;
-        margin-left: 5vw;
-        top: 0px;
-        margin-left: 0;
-    padding: 0px 5%;
-
-        position: fixed;
-    }
-
-
     #site-navigation-mobile {
         display: none;
 
@@ -136,6 +124,7 @@
 
             .menu-mobile-container {
                 height: 100%;
+
                 ul {
                     height: 100%;
                     padding: 10% 5%;
@@ -143,6 +132,7 @@
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+
                     li {
                         padding: 0;
                         margin: 0;
@@ -178,6 +168,7 @@
             }
         }
     }
+
 
     #site-navigation-desk {
         display: flex;
@@ -266,5 +257,39 @@
             }
 
         }
+    }
+
+    &.fixed {
+        position: fixed;
+        top: 20px;
+        z-index: 1000;
+        bottom: 0;
+        height: 45px;
+
+        @include breakpoints(sm, max) {
+            top: 0px;
+            height: 50px;
+
+        }
+
+        #site-navigation-desk {
+            #right-menu {
+                .devis {
+                    @include breakpoints(xlg, max) {
+                        bottom: -50px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoints(sm, max) {
+        width: 100vw;
+        height: 50px;
+        margin-left: 5vw;
+        top: 0px;
+        margin-left: 0;
+        padding: 0px 5%;
+        position: fixed;
     }
 }

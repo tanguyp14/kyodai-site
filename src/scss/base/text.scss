@@ -4,6 +4,10 @@ body {
     line-height: $base-line-height;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    strong{
+        font-variation-settings: "wght" 400, "wdth" 100;
+        @include hover-text;
+    }
 }
 
 h1,
@@ -19,9 +23,14 @@ h3,
         "wght" 200,
         "wdth" 75;
 }
-h2,
+h1,
+.h1,h2,
 .h2 {
-    font-size: 3rem;
+    text-align: left;
+    font-size: 2rem;
     font-variation-settings: "wght" 200, "wdth" 100;
-    
+    margin: 0;
+    @include breakpoints(sm) {
+        font-size: 3rem;
+    }
 }

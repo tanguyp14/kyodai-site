@@ -1,0 +1,59 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.presentation {
+    height: 100vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .left {
+        margin-top: 0px;
+
+        @include breakpoints(sm) {
+            margin-top: 10vh;
+        }
+
+        .title {
+            max-width: 100%;
+
+            @include breakpoints(sm) {
+                max-width: 40vw;
+            }
+
+        }
+
+        .text {
+            max-width: 100%;
+
+            @include breakpoints(sm) {
+                max-width: 40vw;
+            }
+        }
+    }
+
+    .right {
+        max-width: 100%;
+        width: 100%;
+        border: 1px solid black;
+
+        @include breakpoints(sm) {
+            height: 90%;
+            width: 50%;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @include breakpoints(sm) {
+        flex-direction: row;
+        padding-left: 10vw;
+        padding-right: 0px;
+    }
+}

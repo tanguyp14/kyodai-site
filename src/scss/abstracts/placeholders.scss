@@ -1,0 +1,19 @@
+.pwl {
+    position: relative;
+    .stamp{
+        position: absolute;
+        display: flex;
+        width: 15vh;
+        height: 15vh;
+        bottom: -30px;
+        left: -30px;
+        transform: rotate(35deg);
+        background-image: url("../image/stamp.svg");
+        background-size: cover;
+        opacity: 0;
+        &.animate{
+            opacity: 1;
+            animation: stamp 0.2s linear forwards;
+        }
+    }
+}
