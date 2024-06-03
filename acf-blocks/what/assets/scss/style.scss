@@ -1,0 +1,80 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.what {
+    height: calc(100vh - 200px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    padding-left: 10px;
+
+    .list-menu {
+        max-width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 2rem;
+            text-transform: none;
+            font-variation-settings: 'wdth' 100, 'wght' 400;
+            cursor: pointer;
+            @include hover-text;
+
+            &.visible {
+                font-variation-settings: 'wdth' 100, 'wght' 700;
+                font-size: 2.5rem;
+            }
+        }
+
+        .text {
+            height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+
+            &.visible {
+                height: 100%;
+            }
+        }
+    }
+
+    .list-img {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        width: 100%;
+        height: 100%;
+        justify-items: center;
+        align-items: center;
+        position: relative;
+
+        .img {
+            img {
+                grid-row: 1;
+                grid-column: 1;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                object-position: center center;
+                border: 100px solid transparent;
+            }
+
+            height: 0px;
+            position: absolute;
+            width: 50%;
+            z-index: 90;
+            transition: all 2s cubic-bezier(0, 1, 0, 1);
+
+            &.visible {
+                z-index: 100;
+                height: 100%;
+                width: 100%;
+
+                img {
+                    transition: all 0.6s linear;
+                    border: 1px solid $black;
+                }
+            }
+        }
+    }
+}

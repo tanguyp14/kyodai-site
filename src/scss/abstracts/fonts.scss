@@ -1,12 +1,8 @@
-@font-face {
-    font-family: 'hiragino_sans';
-    src: url('../fonts/HiraKakuStdN-W7-AlphaNum.woff') format('woff'),
-         url('../fonts/HiraKakuStdN-W7-AlphaNum.woff2') format('woff2');
-}
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
 // Font Family
 $primary-font-family: "Bricolage Grotesque", sans-serif;
-$secondary-font-family: 'hiragino_sans', serif;
+$secondary-font-family: 'roboto', serif;
 
 // Font Size
 $base-font-size: 16px;
