@@ -1,0 +1,148 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.pack_presta {
+    display: flex;
+    max-width: 70vw;
+    flex-direction: row;
+    margin: auto;
+    border: 1px solid $white;
+    border-radius: $border-radius;
+    padding: 30px;
+    margin-top: 30px;
+    background-color: $white;
+    gap: 20px;
+    align-items: center;
+    box-shadow: $black 1px 1px 1px;
+
+    .form_pack {
+        width: 60%;
+        h2{
+            font-size: 2rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            input {
+                max-width: 100%;
+
+                &[type="text"],
+                &[type="email"] {
+                    width: 100%;
+                    height: 2rem;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+
+                &[type="submit"] {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                    width: auto;
+                    margin: auto;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: $black;
+                    color: $white;
+                    padding: 10px 50px;
+                    font-variation-settings: 'wdth' 100, 'wght' 450;
+                    text-transform: uppercase;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        border: none;
+                        color: $black;
+                        background-color: grey;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .end {
+                p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+
+                    input {
+                        margin: 0;
+                        height: 41px;
+                    }
+
+                    a {
+                        height: 41px;
+                        position: relative;
+                        border-radius: 5px;
+                        img {
+                            height: 41px;
+                            position: relative;
+                            z-index: 20;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            background-image: url('../../../../dist/image/coeur.svg');
+                            left: 20px;
+                            top: -5px;
+                            z-index: 30;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                            scale: 0;
+                            transition: all  0.3s ease-in-out;
+                        }
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            background-image: url('../../../../dist/image/coeur.svg');
+                            left: 15px;
+                            top: -10px;
+                            z-index: 30;
+                            background-size: 100% 100%;
+                            background-repeat: no-repeat;
+                            scale: 0;
+                            transition: all  0.3s ease-in-out;
+                        }
+                        &:hover {
+                            &::after {
+                                scale: 1;
+                                animation: heart infinite ease-in-out 1s alternate;
+
+                            }
+                            &::before{
+                                scale: 1;
+                                animation: heart infinite ease-in-out 0.5s alternate;
+                            }
+                        }
+
+
+                    }
+                }
+                .wpcf7-spinner {
+                    position: absolute;
+                }
+            }
+        }
+    }
+    .image_pack {
+        width: 50%;
+
+        img {
+            width: 100%;
+            height: auto;
+            border: 1px solid $black;
+        }
+    }
+}

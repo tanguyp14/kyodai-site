@@ -3,4 +3,10 @@
     @include breakpoints(sm) {
         padding-top : 200px;
     }
+    &_mid{
+        padding-top: 60px;
+        @include breakpoints(sm) {
+            padding-top : 100px;
+        }
+    }
 }

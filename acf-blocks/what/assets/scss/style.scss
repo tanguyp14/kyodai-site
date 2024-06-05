@@ -2,17 +2,32 @@
 
 // Call all variables 
 .what {
-    height: calc(100vh - 200px);
+    height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     align-items: end;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     padding-left: 10px;
+    padding-right: 10px;
+
+    @include breakpoints(sm) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        height: calc(100vh - 200px);
+        padding-left: 10px;
+        padding-right: 0px;
+
+    }
 
     .list-menu {
         max-width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        @include breakpoints(sm) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         h2 {
             font-size: 2rem;
@@ -23,14 +38,24 @@
 
             &.visible {
                 font-variation-settings: 'wdth' 100, 'wght' 700;
-                font-size: 2.5rem;
+                font-size: 2rem;
+
+                @include breakpoints(sm) {
+                    font-size: 2.5rem;
+                }
             }
         }
 
         .text {
             height: 0;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+            transition: none;
+
+
+            @include breakpoints(sm) {
+                transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+
+            }
 
             &.visible {
                 height: 100%;
@@ -56,7 +81,7 @@
                 width: 100%;
                 height: 100%;
                 object-position: center center;
-                border: 100px solid transparent;
+                border: 10px solid transparent;
             }
 
             height: 0px;
@@ -69,6 +94,7 @@
                 z-index: 100;
                 height: 100%;
                 width: 100%;
+
 
                 img {
                     transition: all 0.6s linear;
