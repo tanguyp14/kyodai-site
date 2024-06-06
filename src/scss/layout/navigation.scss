@@ -61,7 +61,7 @@
             }
         }
 
-        @include breakpoints(sm, max) {
+        @include breakpoints(lg, max) {
             display: flex;
             justify-content: space-between;
             height: 100%;
@@ -175,7 +175,7 @@
         justify-content: space-between;
         width: 100%;
 
-        @include breakpoints(sm, max) {
+        @include breakpoints(lg, max) {
             display: none;
         }
 
@@ -266,7 +266,7 @@
         bottom: 0;
         height: 45px;
 
-        @include breakpoints(sm, max) {
+        @include breakpoints(lg, max) {
             top: 0px;
             height: 50px;
 
@@ -283,7 +283,7 @@
         }
     }
 
-    @include breakpoints(sm, max) {
+    @include breakpoints(lg, max) {
         width: 100vw;
         height: 50px;
         margin-left: 5vw;

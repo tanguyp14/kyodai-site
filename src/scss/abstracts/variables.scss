@@ -1,5 +1,91 @@
 $border-radius: rem(30);
 
+@keyframes animationEnterTop {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes animationEnterRight {
+    0% {
+        transform: translate3d(100%, 0, 0);
+
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes animationEnterBottom {
+    0% {
+        transform: translate3d(0, 100%, 0);
+
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes animationEnterLeft {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes animationLeaveTop {
+    0% {
+        transform: none;
+
+    }
+    100% {
+        transform: translate3d(0, -101%, 0);
+    }
+}
+
+@keyframes animationLeaveRight {
+    0% {
+        transform: none;
+
+    }
+
+    100% {
+        transform: translate3d(101%, 0, 0);
+    }
+}
+
+@keyframes animationLeaveBottom {
+    0% {
+        transform: none;
+
+    }
+
+    100% {
+        transform: translate3d(0, 101%, 0);
+    }
+}
+
+@keyframes animationLeaveLeft {
+    0% {
+        transform: none;
+
+    }
+
+    100% {
+        transform: translate3d(-101%, 0, 0);
+    }
+}
+
 @mixin hover-text {
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 

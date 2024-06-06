@@ -3,6 +3,8 @@
     extract($fields);
     ?>
     <section class="projets">
+        <h1><?php echo $titre; ?></h1>
+        <p class="under"><?php echo $zone_de_texte; ?></p>
         <div class="grid">
             <?php foreach ($projets as $item) : extract($item); ?>
                 <div class="grid-item">

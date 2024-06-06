@@ -1,46 +1,50 @@
 (function ($) {
 	$(document).ready(function ($) {
 		new Masonry('.grid', {
-			// containerStyle: null,
 			itemSelector: '.grid-item',
 			columnWidth: '.grid-item',
 			percentPosition: true,
 			gutter: 20
 		});
 
-		$('.image').mouseenter(function(e) {
-			var $element = $(this);
-			var offset = $element.offset();
-			var width = $element.width();
-			var height = $element.height();
-			var x = e.pageX - offset.left;
-			var y = e.pageY - offset.top;
-			var $description = $element.find('.description');
-	
-			$description.css({ 'left': '-100%', 'right': 'auto', 'top': 'auto', 'bottom': 'auto' });
-	
-			if (x < width / 4) {
-				$description.addClass('left');
-				$description.css({ 'top': '0', 'left': '0' });
+		var items = document.getElementsByClassName('image');
+		for (var i = 0; i < items.length; i++) {
+	   
+		  // Loop over the registered event types.
+		  ['mouseenter', 'mouseleave'].forEach(function (eventname) {
+	   
+			// Add an eventListener of the given type for the current item element.
+			items[i].addEventListener(eventname, function (event) {
+	   
+			  // Retrieve the direction of the enter/leave event.
+			  var dir = getHoverDirection(event);
+	   
+			  event.currentTarget.classList.remove('mouseenter');
+			  event.currentTarget.classList.remove('mouseleave');
+			  event.currentTarget.classList.remove('top');
+			  event.currentTarget.classList.remove('right');
+			  event.currentTarget.classList.remove('bottom');
+			  event.currentTarget.classList.remove('left');
 
-			} else if (x > width * 3 / 4) {
-				$description.addClass('right');
-				$description.css({ 'top': '0', 'right': '0' });
+			  event.currentTarget.className += ' ' + event.type + ' ' + dir;
+	   
+			}, false);
+		  });
+		}
 
-			} else if (y < height / 4) {
-				$description.addClass('top');
-				$description.css({ 'top': '0', 'left': '0' });
-			} else if (y > height * 3 / 4) {
-				$description.addClass('bottom');
-				$description.css({ 'bottom': '0', 'left': '0' });
+		const getHoverDirection = function (event) {
+			var directions = ['top', 'right', 'bottom', 'left'];
+			var item = event.currentTarget;
+		   
+			var w = item.offsetWidth;
+			var h = item.offsetHeight;
+			var x = (event.clientX - item.getBoundingClientRect().left - (w / 2)) * (w > h ? (h / w) : 1);
+			var y = (event.clientY - item.getBoundingClientRect().top - (h / 2)) * (h > w ? (w / h) : 1);
 
-			}
-
-		});
-		$('.image').mouseleave(function() {
-			$(this).find('.description').removeClass('left right top bottom');
-		});
-
+			var d = Math.round(Math.atan2(y, x) / 1.57079633 + 5) % 4;
+		   
+			return directions[d];
+		  };
 	});
 	$(window).load(function () {
 

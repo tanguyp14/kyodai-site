@@ -79,7 +79,7 @@ function blockStyles() {
   return src(paths.blockStyles.src)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer("last 2 version"), cssnano({ zindex: false }) ]))
+    .pipe(postcss([ autoprefixer("last 2 version"), cssnano({ zindex: false, reduceIdents: false }) ]))
     .pipe(rename(function (file) {
       file.dirname = file.dirname.replace('scss', 'css');
     }))

@@ -20,6 +20,8 @@
     <div id="right-menu" class="menu">
         <ul>
             <li class="devis"><a class="button red" href="/devis">Demande de devis</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+
             <li><a href="/contact">Contact</a></li>
             <li><a href="https://www.instagram.com/kyodaiprint/?hl=fr">
                     <div class="instagram"></div>
