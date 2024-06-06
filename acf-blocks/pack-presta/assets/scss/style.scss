@@ -9,11 +9,9 @@
     border: 1px solid $white;
     border-radius: $border-radius;
     padding: 30px;
-    margin-top: 30px;
     background-color: $white;
     gap: 20px;
     align-items: center;
-    box-shadow: $black 1px 1px 1px;
 
     .form_pack {
         width: 60%;
@@ -142,6 +140,8 @@
         img {
             width: 100%;
             height: auto;
+            max-height: 40vh;
+            object-fit: cover;
             border: 1px solid $black;
         }
     }

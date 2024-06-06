@@ -43,5 +43,8 @@
     "postcss": "^8.4.20",
     "sass": "^1.56.2",
     "yargs": "^17.6.2"
+  },
+  "dependencies": {
+    "masonry-layout": "^4.2.2"
   }
 }
