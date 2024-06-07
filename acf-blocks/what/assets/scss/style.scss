@@ -30,18 +30,43 @@
         }
 
         h2 {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
             font-size: 2rem;
             text-transform: none;
             font-variation-settings: 'wdth' 100, 'wght' 400;
             cursor: pointer;
             @include hover-text;
 
+            .arrow {
+                display: flex;
+                aspect-ratio: 1/1;
+                height: 10px;
+                background-image: url('../../../../dist/image/arrow.svg');
+                background-size: 90% 90%;
+                background-position: center center;
+                background-repeat: no-repeat;
+                transition: all 1s cubic-bezier(0, 1, 0.8, 1.2);
+                margin-right: 10px;
+            }
+
             &.visible {
                 font-variation-settings: 'wdth' 100, 'wght' 700;
                 font-size: 2rem;
 
+                .arrow {
+                    rotate: 45deg;
+                    height: 20px;
+                    margin-right: 15px;
+                }
+
                 @include breakpoints(sm) {
                     font-size: 2.5rem;
+
+                    .arrow {
+                        height: 30px;
+                    }
                 }
             }
         }
@@ -50,11 +75,10 @@
             height: 0;
             overflow: hidden;
             transition: none;
-
+            padding-right: 20px;
 
             @include breakpoints(sm) {
                 transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-
             }
 
             &.visible {

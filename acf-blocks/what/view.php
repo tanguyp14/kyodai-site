@@ -9,7 +9,7 @@
             <?php
             foreach ($liste_prestation as $item) {
                 extract($item); ?>
-                <h2 id="<?php echo $i; ?>"><?php echo $nom_de_la_presta; ?></h2>
+                <h2 id="<?php echo $i; ?>"><span class="arrow"></span><?php echo $nom_de_la_presta; ?></h2>
                 <p class="text"><?php echo $explications; ?></p>
                 <?php $i++; ?>
             <?php }
