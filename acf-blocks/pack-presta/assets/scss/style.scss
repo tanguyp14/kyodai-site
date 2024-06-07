@@ -3,8 +3,8 @@
 // Call all variables 
 .pack_presta {
     display: flex;
-    max-width: 70vw;
-    flex-direction: row;
+    max-width: 90vw;
+    flex-direction: column;
     margin: auto;
     border: 1px solid $white;
     border-radius: $border-radius;
@@ -13,14 +13,26 @@
     gap: 20px;
     align-items: center;
 
+    @include breakpoints('lg') {
+        flex-direction: row;
+    max-width: 70vw;
+
+    }
+
     .form_pack {
-        width: 60%;
-        h2{
+        width: 90%;
+        @include breakpoints('lg') {
+            width: 60%;
+        }
+
+        h2 {
             font-size: 2rem;
         }
-        h3{
+
+        h3 {
             font-size: 1.5rem;
         }
+
         form {
             display: flex;
             flex-direction: column;
@@ -38,7 +50,6 @@
                     padding: 10px;
                     box-sizing: border-box;
                 }
-
                 &[type="submit"] {
                     display: flex;
                     justify-content: center;
@@ -70,6 +81,10 @@
                     justify-content: center;
                     align-items: center;
                     gap: 5px;
+                    flex-direction: column;
+                    @include breakpoints('lg') {
+                        flex-direction: row;
+                    }
 
                     input {
                         margin: 0;
@@ -80,11 +95,13 @@
                         height: 41px;
                         position: relative;
                         border-radius: 5px;
+
                         img {
                             height: 41px;
                             position: relative;
                             z-index: 20;
                         }
+
                         &::after {
                             content: "";
                             position: absolute;
@@ -97,9 +114,10 @@
                             background-size: 100% 100%;
                             background-repeat: no-repeat;
                             scale: 0;
-                            transition: all  0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
                         }
-                        &::before{
+
+                        &::before {
                             content: "";
                             position: absolute;
                             width: 10px;
@@ -111,31 +129,37 @@
                             background-size: 100% 100%;
                             background-repeat: no-repeat;
                             scale: 0;
-                            transition: all  0.3s ease-in-out;
+                            transition: all 0.3s ease-in-out;
                         }
+
                         &:hover {
                             &::after {
                                 scale: 1;
                                 animation: heart infinite ease-in-out 1s alternate;
 
                             }
-                            &::before{
+
+                            &::before {
                                 scale: 1;
                                 animation: heart infinite ease-in-out 0.5s alternate;
                             }
                         }
-
-
                     }
                 }
+
                 .wpcf7-spinner {
                     position: absolute;
                 }
             }
         }
     }
+
     .image_pack {
+        width: 90%;
+        @include breakpoints('lg') {
         width: 50%;
+
+        }
 
         img {
             width: 100%;

@@ -1,11 +1,13 @@
 (function ($) {
 	$(document).ready(function ($) {
-		new Masonry('.grid', {
-			itemSelector: '.grid-item',
-			columnWidth: '.grid-item',
-			percentPosition: true,
-			gutter: 20
-		});
+		if (document.querySelector('.grid')) {
+			new Masonry('.grid', {
+				itemSelector: '.grid-item',
+				columnWidth: '.grid-item',
+				percentPosition: true,
+				gutter: 20
+			});
+		}
 
 		var items = document.getElementsByClassName('image');
 		for (var i = 0; i < items.length; i++) {

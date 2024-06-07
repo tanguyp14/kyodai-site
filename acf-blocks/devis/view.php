@@ -8,7 +8,7 @@
                 <?php echo $shortcode_devis; ?>
             <?php endif; ?>
         </div>
-        <div class="two">
+        <div class="two pwl">
             <?php if ($image) : ?>
                 <?php echo wp_get_attachment_image($image, 'full'); ?>
             <?php endif; ?>

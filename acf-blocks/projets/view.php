@@ -11,21 +11,22 @@
                     <?php if ($image) : ?>
                         <figure class="image">
                             <?php echo wp_get_attachment_image($image, 'full'); ?>
-                            <?php if ($insta) : ?>
-                                <span class="insta">
-                                    <a alt="<?php echo $insta ?>" href="https://instagram.com/<?php echo $insta ?>">@<?php echo $insta; ?></a>
-                                </span>
-                            <?php endif; ?>
-
-                            <?php if ($description) : ?>
+                            <?php if ($description or $name or $insta) : ?>
                                 <div class="description">
-                                    <?php echo $description; ?>
+                                    <div class="overlay">
+                                        <?php if ($name) : ?>
+                                            <h2 class="name"><?php echo $name; ?></h2>
+                                        <?php endif; ?>
+                                        <p><?php echo $description; ?></p>
+                                        <?php if ($insta) : ?>
+                                            <span class="insta">
+                                                <a alt="<?php echo $insta ?>" href="https://instagram.com/<?php echo $insta ?>">@<?php echo $insta; ?></a>
+                                            </span>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                             <?php endif; ?>
                         </figure>
-                    <?php endif; ?>
-                    <?php if ($name) : ?>
-                        <p class="name">- <?php echo $name; ?></p>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>

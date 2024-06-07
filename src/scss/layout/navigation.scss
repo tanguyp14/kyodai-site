@@ -190,7 +190,7 @@
                 padding: 0;
                 display: flex;
                 justify-content: space-between;
-                gap: 2vw;
+                gap: 20px;
 
                 li {
                     list-style: none;
@@ -203,7 +203,8 @@
                     font-variation-settings: "wght" 800, "wdth" 100;
 
                     &.devis {
-                        @include breakpoints(xlg, max) {
+                        min-width: 200px;
+                        @include breakpoints(xxxlg, max) {
                             position: absolute;
                             left: 50%;
                             transform: translate(-50%, -50%);
@@ -275,7 +276,7 @@
         #site-navigation-desk {
             #right-menu {
                 .devis {
-                    @include breakpoints(xlg, max) {
+                    @include breakpoints(xxxlg, max) {
                         bottom: -50px;
                     }
                 }
