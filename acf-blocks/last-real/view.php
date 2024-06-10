@@ -7,7 +7,7 @@
             <div class="content">
                 <h2><?php echo $titre; ?></h2>
                 <p><?php echo $zone_de_texte; ?></p>
-                <a href="/portfolio" alt="Vooir le portfolio" class="btn">Voir le portfolio</a>
+                <a href="/portfolio" alt="Voir le portfolio" class="btn">Voir le portfolio</a>
             </div>
         </div>
         <div class="two">
