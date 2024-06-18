@@ -1,0 +1,51 @@
+@import '../../../../src/scss/abstracts/all.scss';
+// Call all variables 
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    h2{
+        width: 100%;
+    }
+    .swipper {
+        .card {
+            background-color: $white;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            margin: 20px;
+            width: auto;
+            align-items: center;
+
+            .inside {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0px 10px;
+            }
+
+            .img {
+                background-size: cover;
+                width: 100%;
+                max-width: 100px;
+                aspect-ratio: 1/1;
+                border-radius: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                border: 2px solid black;
+            }
+            .text{
+                h4 {
+                    margin: 0;
+                    text-transform: uppercase;
+                }
+    
+                p {
+                    font-style: italic;
+                    font-size: 0.7rem;
+                }
+            }
+
+        }
+    }
+}

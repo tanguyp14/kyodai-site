@@ -22,6 +22,7 @@
 
         &.right {
             border: outside 1px solid $black;
+            padding: 1px;
 
             @include breakpoints('sm') {
                 flex-direction: row;
