@@ -4,18 +4,38 @@
 .reviews {
     display: flex;
     flex-direction: column;
-    h2{
-        width: 100%;
+    padding: 10vh 0;
+
+    h2 {
+        text-align: center;
+        font-size: 3rem;
+        @include hover-text;
     }
     .swipper {
+        .slick-track {
+            display: flex;
+            align-items: center;
+        }
+
         .card {
             background-color: $white;
             padding: 20px;
             box-sizing: border-box;
             border-radius: 20px;
             margin: 20px;
-            width: auto;
             align-items: center;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0,0, 0);
+            max-width: 80vw;
+            @include breakpoints('sm') {
+                max-width: 30vw;
+            }
+
+            transition: all 0.5s ease-in-out;
+            &.slick-current{
+                transform: scale(1.1);
+                transition: transform 0.5s;
+                box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
+            }
 
             .inside {
                 display: flex;
@@ -26,20 +46,21 @@
 
             .img {
                 background-size: cover;
-                width: 100%;
-                max-width: 100px;
+                width: 100px;
                 aspect-ratio: 1/1;
+                min-width: 100px;
                 border-radius: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
                 border: 2px solid black;
             }
-            .text{
+
+            .text {
                 h4 {
                     margin: 0;
                     text-transform: uppercase;
                 }
-    
+
                 p {
                     font-style: italic;
                     font-size: 0.7rem;

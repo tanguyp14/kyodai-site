@@ -3,7 +3,7 @@
     extract($fields);
     ?>
     <section class="reviews">
-        <h1><?php echo $titre; ?></h1>
+        <h2><?php echo $titre; ?></h2>
         <div class="swipper">
             <?php foreach ($liste_des_avis as $avis) : extract($avis) ?>
                 <div class="card">

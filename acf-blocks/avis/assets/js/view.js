@@ -1,14 +1,25 @@
-(function($){
-	$(document).ready(function($) {
+(function ($) {
+	$(document).ready(function ($) {
 		$('.swipper').slick({
-			arrows: false,
-			dots: false,
 			infinite: true,
 			slidesToShow: 3,
-			slidesToScroll: 1
-		  });
+			arrows: false,
+			centerMode: true,
+			centerPadding: '5vw',
+			variableWidth: true,
+			adaptiveHeight: true,
+			autoplay: true,
+			responsive: [
+				{
+				  breakpoint: 1000,
+				  settings: {
+					slidesToShow: 1,
+				  }
+				}
+			  ]
+		});
 	});
-	$(window).load(function() {
+	$(window).load(function () {
 
 	});
 })(jQuery);
