@@ -72,18 +72,27 @@
         }
 
         .text {
-            height: 0;
+            height: 0px;
             overflow: hidden;
             transition: none;
             padding-right: 20px;
-
-            @include breakpoints(sm) {
-                transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+            a{
+                color: $red;
+                cursor: pointer;
             }
-
             &.visible {
                 height: 100%;
             }
+
+            @include breakpoints(sm) {
+                transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+                &.visible {
+                    height: 300px;
+                }
+                
+            }
+
+
         }
     }
 
@@ -112,7 +121,7 @@
             position: absolute;
             width: 50%;
             z-index: 90;
-            transition: all 2s cubic-bezier(0, 1, 0, 1);
+            transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 
             &.visible {
                 z-index: 100;

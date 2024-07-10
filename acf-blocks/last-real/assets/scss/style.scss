@@ -49,6 +49,10 @@
                 text-transform: uppercase;
                 font-variation-settings: 'wght' 700, 'wdth' 100;
                 @include hover-text;
+                color: white;
+                &:visited{
+                    color: white;
+                }
             }
         }
 
