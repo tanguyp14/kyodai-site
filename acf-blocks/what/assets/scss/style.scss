@@ -73,12 +73,18 @@
             overflow: hidden;
             transition: none;
             padding-right: 20px;
+            opacity: 0;
+            left: -20%;
+            position: relative;
+            transition: left 0.5s cubic-bezier(0, 1, 0, 1);
             a{
                 color: $red;
                 cursor: pointer;
             }
             &.visible {
                 height: 100%;
+                opacity: 1;
+                left: 0%;
             }
 
             @include breakpoints(sm) {
@@ -99,13 +105,13 @@
             }
             .img{
                 img{
-                    width: 100%;
+                    width: auto;
                     height: 0px;
                 }
                 &.visible{
                     img{
                         width: 100%;
-                        height: auto;
+                        height: 300px;
                     }
                 }
             }
