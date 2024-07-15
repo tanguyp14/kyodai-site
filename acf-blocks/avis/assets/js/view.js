@@ -7,7 +7,6 @@
 			centerMode: true,
 			centerPadding: '5vw',
 			variableWidth: true,
-			adaptiveHeight: true,
 			autoplay: true,
 			responsive: [
 				{
