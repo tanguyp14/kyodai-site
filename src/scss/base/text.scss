@@ -2,13 +2,9 @@ body {
     font-family: $primary-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
+    color: $black;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    strong {
-        font-variation-settings: "wght" 400, "wdth" 100;
-        @include hover-text;
-    }
 }
 
 h1,
@@ -18,40 +14,5 @@ h2,
 h3,
 .h3 h4,
 .h4 {
-    font-family: $primary-font-family;
-    text-align: center;
-    font-variation-settings:
-        "wght" 200,
-        "wdth" 75;
-}
-
-h1,
-.h1 {
-    text-align: left;
-    font-size: 2rem;
-    font-variation-settings: "wght" 200, "wdth" 100;
-    margin: 0;
-
-    @include breakpoints(sm) {
-        font-size: 3rem;
-    }
-}
-
-h2,
-.h2 {
-    text-transform: uppercase;
-    font-variation-settings: "wght" 600, "wdth" 100;
-    text-align: left;
-    font-size: 0.8rem;
-    margin: 0;
-}
-h3,.h3{
-    font-variation-settings: "wght" 600, "wdth" 100;
-    text-align: left;
-    font-size: 1.7rem;
-    margin: 0;
-}
-
-p{
-    font-family: $primary-font-family;
+    font-family: $secondary-font-family;
 }

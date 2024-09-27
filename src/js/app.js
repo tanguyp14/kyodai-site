@@ -1,6 +1,6 @@
 (function ($) {
-
     $('document').ready(function () {
+        AOS.init();
         if (window.location.pathname !== '/') {
             $('header').addClass('fixed');
         }

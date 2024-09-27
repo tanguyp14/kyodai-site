@@ -41,7 +41,7 @@
         border: 1px solid black;
 
         @include breakpoints(sm) {
-            height: 90%;
+            height: 90vh;
             width: 50%;
         }
 
@@ -56,6 +56,5 @@
         flex-direction: row;
         padding-left: 10vw;
         padding-right: 0px;
-        height: 100vh;
     }
 }
