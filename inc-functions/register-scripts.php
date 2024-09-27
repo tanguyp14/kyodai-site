@@ -17,7 +17,7 @@ function kyodai_scripts() {
     // Enqueue masonry script
     wp_enqueue_script('masonry-scripts', get_template_directory_uri() . '/dist/vendors/masonry.min.js', array( 'jquery' ), false, true);
     wp_enqueue_script('slick-scripts', get_template_directory_uri() . '/dist/vendors/slick.min.js', array( 'jquery' ), false, true);
-	// wp_enqueue_script('aos-script', get_template_directory_uri() . '/dist/vendors/aos.js');
+	wp_enqueue_script('aos-script', get_template_directory_uri() . '/dist/vendors/aos.js');
 
 }
 
