@@ -2,7 +2,7 @@
     $fields = get_fields();
     extract($fields);
     ?>
-    <section class="presentation is_full_page" data-aos="animation_name" id="<?php echo formatValue($ancre); ?>">
+    <section class="presentation is_full_page" data-aos="fade-up" id="<?php echo formatValue($ancre); ?>">
         <div class="left">
             <h1 class="title"><?php echo $titre; ?></h1>
             <p class="text"><?php echo $texte; ?></p>
