@@ -1,0 +1,33 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.marquee {
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+	position: relative;
+    background-color: $red;
+    color: $white;
+    .marquee_container {
+        overflow: hidden;
+        white-space: nowrap; //le plus important
+        width: 100%;
+        position: relative;
+        .marquee_content {
+            display: inline-block;
+            animation: marquee 90s linear infinite;
+            font-family: $secondary-font-family;
+            text-transform: uppercase;
+            font-size: 20px;
+            @include breakpoints(sm){
+                font-size: 50px;
+            }
+        }
+    }
+}
+
+
+
+@keyframes marquee {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
