@@ -1,0 +1,160 @@
+@import '../../../../src/scss/abstracts/all.scss';
+$h: 84px;
+
+.cards {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoints(lg) {
+        display: grid;
+        grid-gap: 2vw;
+        grid-template-rows: 1fr;
+        max-width: 90vw;
+        margin: auto;
+        justify-content: center;
+        grid-template-columns: repeat(3, 400px);
+
+    }
+
+    .card {
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        aspect-ratio: 924/1363;
+
+        .add_on {
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 3;
+
+        }
+
+        .background {
+            width: 400px;
+            aspect-ratio: 924/1363;
+            position: absolute;
+            z-index: 1;
+            background-size: cover;
+        }
+
+        h2 {
+            height: 84px;
+            display: flex;
+            align-items: center;
+            margin: 6px 0px 0px 25%;
+            font-size: 35px;
+            text-transform: uppercase;
+            font-weight: 100;
+            line-height: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .text {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            height: calc(100% - 100px);
+            padding: 30px 40px;
+            line-height: 22px;
+        }
+
+        &:nth-child(1) {
+            .add_on {
+                top: -7%;
+                right: -30px;
+                width: 172px;
+                aspect-ratio: 172/164;
+                animation: write infinite 2s ease-in-out alternate;
+                transform-origin: left bottom;
+            }
+
+            &::after {
+                content: '';
+                display: flex;
+                position: absolute;
+                z-index: 3;
+                background-image: url('../../assets/feuille.png');
+                background-size: contain;
+                width: 53px;
+                bottom: 10px;
+                right: -16px;
+                aspect-ratio: 63/95;
+                background-repeat: no-repeat;
+                animation: leaf infinite 4s ease-in-out alternate;
+                transform-origin: left bottom;
+            }
+        }
+
+        &:nth-child(2) {
+            flex-direction: column-reverse;
+
+            h2 {
+                margin: 0px 0px 16px 25%;
+            }
+
+            .add_on {
+                top: 7%;
+                left: -30px;
+                width: 73px;
+                aspect-ratio: 93/122;
+                animation: rotate infinite 2.5s ease-in-out alternate;
+                transform-origin: center bottom;
+            }
+
+            .text {
+                padding: 30px 50px;
+            }
+        }
+
+        &:nth-child(3) {
+            .text {
+                padding: 45px 60px;
+
+                ul {
+                    margin: 50px 0px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        translate: -5px -5px;
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes leaf {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes write {
+    0% {
+        translate: 0px;
+    }
+
+    50% {
+        translate: -5px -5px;
+        rotate: -5deg;
+    }
+
+    100% {
+        translate: -10px 0;
+    }
+}
