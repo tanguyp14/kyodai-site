@@ -1,5 +1,4 @@
 @import '../../../../src/scss/abstracts/all.scss';
-$h: 84px;
 
 .cards {
     display: flex;
@@ -8,7 +7,15 @@ $h: 84px;
     max-width: 300px;
     margin: auto;
     gap: 50px;
-
+    position: relative;
+    &_container{
+        z-index: -1;
+        background-image: linear-gradient($white, rgb(255, 248, 236, 0.3)), url('../../assets/TRAM_BG.png');
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 90px 0;
+    }
     @include breakpoints(lg) {
         display: grid;
         grid-gap: 2vw;
@@ -17,7 +24,6 @@ $h: 84px;
         margin: auto;
         justify-content: center;
         grid-template-columns: repeat(3, 400px);
-
     }
 
     .card {
