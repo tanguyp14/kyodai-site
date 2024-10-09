@@ -26,8 +26,8 @@
             "sub_fields": [
                 {
                     "key": "field_67065156d6416",
-                    "label": "picto",
-                    "name": "picto",
+                    "label": "Image",
+                    "name": "image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -55,7 +55,7 @@
                     "label": "Texte",
                     "name": "texte",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -66,9 +66,9 @@
                     },
                     "default_value": "",
                     "maxlength": "",
+                    "rows": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "new_lines": "br",
                     "parent_repeater": "field_67065137d6415"
                 }
             ]
@@ -92,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728467325
+    "modified": 1728476219
 }

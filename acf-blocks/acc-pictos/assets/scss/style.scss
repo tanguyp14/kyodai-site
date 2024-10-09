@@ -1,1 +1,76 @@
 @import '../../../../src/scss/abstracts/all.scss';
+
+$border-size: 8px;
+
+.pictos {
+    &_container {
+        margin-top: 10vw;
+        border-top: $border-size solid $black;
+        border-bottom: $border-size solid black;
+        background-color: $orange;
+    }
+
+    display: grid;
+    padding: 0 10vw;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    @include breakpoints(sm) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .picto {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-left: $border-size solid $black;
+        border-right: $border-size solid black;
+        position: relative;
+        height: 10vw;
+        gap: 30px;
+        padding: 0 20px;
+
+        @include breakpoints(sm) {
+            &:nth-child(1) {
+                left: $border-size;
+            }
+
+            &:nth-child(3) {
+                left: -$border-size;
+            }
+        }
+
+        .icon {
+            height: 100%;
+            width: 20%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+
+            @include breakpoints(lg) {
+                width: 30%;
+            }
+        }
+
+        .text {
+            width: 50%;
+            color: $black;
+            font-size: 20px;
+            line-height: 26px;
+            text-align: left;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            @include breakpoints(lg) {
+                font-size: 3vw;
+                line-height: 3.2vw;
+            }
+        }
+
+
+    }
+}
