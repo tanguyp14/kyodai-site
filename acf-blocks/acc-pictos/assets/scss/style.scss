@@ -5,20 +5,25 @@ $border-size: 8px;
 .pictos {
     &_container {
         margin-top: 10vw;
-        border-top: $border-size solid $black;
-        border-bottom: $border-size solid black;
+        border: none;
         background-color: $orange;
+        @include breakpoints(sm) {
+            border-top: $border-size solid $black;
+            border-bottom: $border-size solid black;
+        }
     }
 
     display: grid;
-    padding: 0 10vw;
     margin: auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-
+    gap: 20px;
+    
     @include breakpoints(sm) {
+        padding: 0 10vw;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr;
+        gap: 0px;
     }
 
     .picto {
@@ -26,14 +31,21 @@ $border-size: 8px;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        border-left: $border-size solid $black;
-        border-right: $border-size solid black;
+        border: $border-size solid $black;
         position: relative;
-        height: 10vw;
-        gap: 30px;
-        padding: 0 20px;
+        height: 150px;
+        gap: 1vw;
+        padding: 20px;
 
+        
         @include breakpoints(sm) {
+            padding: 0 20px;
+            height: 10vw;
+            border-top: none;
+            border-bottom: none;
+            border-left: $border-size solid $black;
+            border-right: $border-size solid black;
+
             &:nth-child(1) {
                 left: $border-size;
             }
@@ -45,32 +57,51 @@ $border-size: 8px;
 
         .icon {
             height: 100%;
-            width: 20%;
+            width: 40%;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             display: flex;
-
+            position: relative;
+            animation: pig infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-origin: bottom left;
             @include breakpoints(lg) {
                 width: 30%;
             }
+            
         }
 
         .text {
             width: 50%;
             color: $black;
-            font-size: 20px;
-            line-height: 26px;
+            font-size: clamp(20px, 2vw, 35px);
+            line-height: clamp(20px, 2vw, 35px);
             text-align: left;
             font-weight: bold;
             text-transform: uppercase;
 
             @include breakpoints(lg) {
-                font-size: 3vw;
-                line-height: 3.2vw;
+                font-size: clamp(20px, 2vw, 35px);
+                line-height: clamp(20px, 2vw, 35px);
             }
         }
 
 
+    }
+}
+
+@keyframes pig {
+
+    0%,100%{
+        bottom: 0px;
+        rotate: 0deg;
+    }
+    20%{
+        bottom: 10px;
+        rotate: -5deg;
+    }
+    30%{
+        bottom: 0px;
+        rotate: 0deg;
     }
 }
