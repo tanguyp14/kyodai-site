@@ -1,0 +1,162 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.kit_papier {
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoints(sm) {
+        margin-top: 150px;
+        flex-direction: row;
+    }
+
+    .image_pack {
+        width: 80%;
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        rotate: 90deg;
+        z-index: -1;
+
+        @include breakpoints(sm) {
+            width: 60%;
+            rotate: 0deg;
+            z-index: 3;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: -20px;
+            animation: hand infinite 5s alternate ease-in-out;
+            transform-origin: left center;
+        }
+    }
+
+    .text_pack {
+        width: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoints(sm) {
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: $blue;
+            font-size: 50px;
+            margin: 0;
+            line-height: 50px;
+        }
+
+        .sous-titre {
+            text-transform: uppercase;
+            color: $blue;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 30px;
+        }
+
+        .z-t {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 20px;
+
+            &-t {
+                margin-top: 20px;
+                line-height: 20px;
+                font-size: 20px;
+                font-weight: 900;
+                color: $red;
+                margin-bottom: 40px;
+            }
+        }
+
+        .link {
+            position: relative;
+            width: fit-content;
+            height: auto;
+            display: flex;
+
+            &::after {
+                content: '';
+                background-image: url('../FERMEE.png');
+                width: 55px;
+                aspect-ratio: 69/50;
+                animation: rotate 3s ease-in-out alternate infinite;
+                transform-origin: bottom left;
+                top: -15px;
+                left: -15px;
+                display: flex;
+                position: absolute;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            &:hover {
+                &::after {
+                    content: '';
+                    background-image: url('../OUVERTE.png');
+                    width: 55px;
+                    aspect-ratio: 69/69;
+                    top: -30px;
+                    left: -15px;
+                }
+            }
+
+            a {
+                background-color: $red;
+                color: $white;
+                border: 5px solid $black;
+                border-radius: 100px;
+                text-transform: uppercase;
+                padding: 5px 7px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@keyframes hand {
+
+    0% {
+        rotate: -1deg;
+    }
+
+    100% {
+        rotate: 1deg;
+    }
+
+}
+
+@keyframes rotate {
+
+    0% {
+        rotate: -10deg;
+    }
+
+    100% {
+        rotate: -25deg;
+    }
+
+}
+
+[data-aos="right"] {
+    transition-property: transform;
+    transform: translateX(-1920px);
+
+    &.aos-animate {
+        transform: translateX(0px);
+    }
+}

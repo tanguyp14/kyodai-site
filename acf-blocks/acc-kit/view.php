@@ -1,0 +1,18 @@
+    <?php
+    $fields = get_fields();
+    extract($fields);
+    ?>
+    <section class="kit_papier">
+        <div class="image_pack" data-aos="<?= wp_is_mobile() ? 'fade-right' : 'right' ?>" data-aos-easing="ease-in-out" data-aos-delay="300">
+            <?php if ($image) : ?>
+                <?php echo wp_get_attachment_image($image, 'full'); ?>
+            <?php endif; ?>
+        </div>
+        <div class="text_pack">
+            <h2><?php echo $titre; ?></h2>
+            <p class="sous-titre"><?php echo $sous_titre; ?></p>
+            <p class="z-t"><?php echo $zone_de_texte; ?></p>
+            <p class="z-t-t"><?php echo $zone_de_gras; ?></p>
+            <span class="link"><a href="<?php echo $lien; ?>" alt="Vers la demande de Kit papier" class="cta">Choper mon kit</a></span>
+        </div>
+    </section>
