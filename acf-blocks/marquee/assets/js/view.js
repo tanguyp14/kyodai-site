@@ -4,7 +4,7 @@
 		$('.marquee').each(function () {
 			var id = $(this).attr('id');
 			// ou effectuer toute autre opération avec l'id
-			var marqueeTextElement = $('#' + id + '.marquee_text');
+			var marqueeTextElement = $('#' + id + ' .marquee_text');
 			console.log('#' + id + '.marquee_text');
 			var marqueeText = marqueeTextElement.text();
 
