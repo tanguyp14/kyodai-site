@@ -4,7 +4,8 @@ $breakpoints : (
     md: 960,
     lg: 1200,
     xlg: 1450,
-    xxxlg: 1600
+    xxxlg: 1600,
+    xxxxl: 1920
 );
 
 @mixin breakpoints($breakpoint, $minOrMax : min) {

@@ -1,9 +1,110 @@
 @import '../../../../src/scss/abstracts/all.scss';
 
-.avis{
-    display: grid;
-    padding: 10vw;
-    .avi{
+.avis {
+    &_container {
+        padding: 10px 0px;
+        background-color: $red;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        @include breakpoints(md) {
+            padding: 100px 0px 250px;
+        }
+
+        .arrow {
+            z-index: 2;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 25%;
+            aspect-ratio: 1926/1729;
+            display: flex;
+            animation: hands 5s infinite;
+            top: 50%;
+            @include breakpoints(md) {
+                top: 30%;
+            }
+
+        }
+
+        .arrow_left {
+            background-image: url('../MAIN.png');
+            left: -11%;
+        }
+
+        .arrow_right {
+            background-image: url('../MAIN.png');
+            right: -11%;
+            scale: -1 1;
+        }
+    }
+
+    max-width: 80%;
+
+    .slick-list {
+        height: 100%;
+        .slick-track {
+            height: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+    }
+
+    .avi {
+        width: 80vw;
+        height: auto;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+        border-radius: 30px;
+        border: 8px solid $black;
+        padding: 20px;
+        background-color: $white;
+        &.slick-current{
+            .icon{
+                top: -10px;
+                scale: 1.1;
+            }
+        }
+        
+        @include breakpoints(sm) {
+            width: calc((80vw - 20px) / 2);
+        }
+        @include breakpoints(md) {
+            width: calc((80vw - 40px) / 3);
+        }
+        @include breakpoints(xlg) {
+            width: calc((80vw - 80px) / 5);
+        }
+        @include breakpoints(xxxxl){
+            width: calc((1536px - 80px) / 5);
+        }
+
+        .name {
+            color: $blue;
+            font-family: $secondary-font-family;
+            font-weight: 100;
+            font-size: 30px;
+            @include breakpoints(sm){
+                font-size: clamp(20px, 2vw, 35px);
+            }
+        }
+
+        .icon {
+            display: flex;
+            width: 80px;
+            height: 80px;
+            top: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            transform-origin: center;
+        }
 
     }
 }
+
