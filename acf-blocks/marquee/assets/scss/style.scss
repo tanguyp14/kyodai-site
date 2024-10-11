@@ -1,24 +1,45 @@
 @import '../../../../src/scss/abstracts/all.scss';
 
 .marquee {
-	overflow: hidden;
-	white-space: nowrap;
-	width: 100%;
-	position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
     background-color: $red;
     color: $white;
+
     .marquee_container {
         overflow: hidden;
         white-space: nowrap; //le plus important
         width: 100%;
         position: relative;
+
         .marquee_content {
-            display: inline-block;
-            animation: marquee 90s linear infinite;
+            display: flex;
+            animation: marquee linear infinite;
             font-family: $secondary-font-family;
             text-transform: uppercase;
             font-size: 20px;
-            @include breakpoints(sm){
+            gap: 20px;
+            width: fit-content;
+
+            div {
+                width: fit-content;
+                display: flex;
+                height: auto;
+                align-items: center;
+                gap: 20px;
+
+                img {
+                    //modifier pour la taille de l'imageF
+                    width: fit-content;
+                    height: 40px;
+                    object-position: 0px -5px;
+                    overflow: visible;
+                }
+            }
+
+            @include breakpoints(sm) {
                 font-size: 50px;
             }
         }
@@ -28,6 +49,11 @@
 
 
 @keyframes marquee {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }

@@ -12,6 +12,7 @@
                     <span class="icon" style="background-image: url('<?php echo wp_get_attachment_url($icon); ?>');"></span>
                     <p class="name"><?php echo $nom; ?></p>
                     <p class="text"><?php echo $zone_de_texte; ?></p>
+                    <span class="date"><?php echo $date; ?></span>
                 </div>
             <?php $d++;
             endforeach; ?>

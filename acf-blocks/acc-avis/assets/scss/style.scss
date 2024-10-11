@@ -31,17 +31,17 @@
 
         .arrow_left {
             background-image: url('../MAIN.png');
-            left: -11%;
+            left: calc(-11% - 8px);
         }
 
         .arrow_right {
             background-image: url('../MAIN.png');
-            right: -11%;
+            right: calc(-11% - 8px);
             scale: -1 1;
         }
     }
 
-    max-width: 80%;
+    max-width: calc(80% + 16px);
 
     .slick-list {
         height: 100%;
@@ -103,6 +103,13 @@
             transition: all 0.5s ease-in-out;
             position: relative;
             transform-origin: center;
+        }
+        .date{
+            display: flex;
+            width: 100%;
+            text-align: right;
+            justify-content: flex-end;
+            font-weight: 100;
         }
 
     }

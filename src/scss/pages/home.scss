@@ -3,4 +3,46 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    main{
+        position: relative;
+        @include breakpoints(xxxxl){
+            $value: calc((100vw - 1920px)/2);
+            // &:after{
+            //     z-index: -10;
+            //     content: 'IL EST ENORME TON ECRAN';
+            //     transform-origin: top center;
+            //     position: fixed;
+            //     rotate: 90deg;
+            //     top: 50vh;
+            //     left: calc(1920px - $value);
+            //     width: 100vh;
+            //     height: 100vw;
+            //     background-color: $red;
+            //     color: white;
+            //     font-family: $secondary-font-family;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     font-size: 50px;
+            // }
+            // &:before{
+            //     z-index: -10;
+            //     content: 'IL EST ENORME TON ECRAN';
+            //     transform-origin: top center;
+            //     position: fixed;
+            //     rotate: -90deg;
+            //     top: 50vh;
+            //     right: calc(1920px - $value);
+            //     width: 100vh;
+            //     height: 100vw;
+            //     background-color: $red;
+            //     color: white;
+            //     font-family: $secondary-font-family;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     font-size: 50px;
+            // }
+        }
+    }
 }
