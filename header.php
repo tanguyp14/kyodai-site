@@ -7,7 +7,6 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Pixelea
  */
 
 ?>
@@ -25,12 +24,22 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text visually-hidden" href="#main-content"><?php esc_html_e('Aller au contenu', 'kyodai'); ?></a>
-
-		<header id="masthead" class="header" role="banner">
-			<div class="container">
-				<?php get_template_part('template-parts/navigation/primary'); ?>
-
-
+	<?php if (wp_is_mobile()) { ?>
+		<span class="button_mobile">
+			<span></span>
+			<span></span>
+			<span></span>
+		</span>
+		<?php } ?>
+		<header id="masthead" class="header 
+		<?php
+		if (wp_is_mobile()) {
+			echo ' mobile';
+		};
+		if (!is_front_page()) {
+			echo ' sticky';
+		}
+		?>" role="banner">
+			<?php get_template_part('template-parts/navigation/primary'); ?>
 		</header><!-- #masthead -->
 		<main id="main-content" role="main">
