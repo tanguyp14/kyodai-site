@@ -32,10 +32,11 @@
 
                 img {
                     //modifier pour la taille de l'imageF
-                    width: fit-content;
+                    width: auto;
                     height: 20px;
-                    object-position: 0px -2px;
                     overflow: visible;
+                    position: relative;
+                    top: -2px;
                 }
             }
 
@@ -45,7 +46,7 @@
                 div {
                     img {
                         height: 40px;
-
+                        top: -4px;
                     }
                 }
             }
