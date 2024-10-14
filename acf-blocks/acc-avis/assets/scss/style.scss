@@ -8,9 +8,8 @@
         justify-content: center;
         position: relative;
         overflow: hidden;
-
         @include breakpoints(md) {
-            padding: 100px 0px 0px 0px;
+            padding: 100px 0px 10vh 0px;
         }
 
         .arrow {
@@ -23,21 +22,30 @@
             display: flex;
             animation: hands 5s infinite;
             top: 50%;
+            background-image: url('../MAIN.png');
+
 
             @include breakpoints(md) {
-                top: 30%;
+                top: 38%;
             }
 
         }
 
         .arrow_left {
-            background-image: url('../MAIN.png');
-            left: calc(-11% - 8px);
+            
+            left: calc(-12% - 6px);
+            rotate: 15deg;
+            @include breakpoints(md) {
+                left: calc(-13% - 7px);
+            }
         }
 
         .arrow_right {
-            background-image: url('../MAIN.png');
-            right: calc(-11% - 8px);
+            right: calc(-12% - 6px);
+            rotate: -15deg;
+            @include breakpoints(md) {
+                right: calc(-13% - 7px);
+            }
             scale: -1 1;
         }
     }
@@ -146,7 +154,10 @@
     justify-content: center;
     width: 100%;
     font-size: 20px;
-    padding: 30px 0px 120px 0px;
+    padding: 20px 0px 100px 0px;
+    @include breakpoints(md) {
+        padding: 30px 0px 120px 0px;
+    }
 
     strong {
         font-family: $secondary-font-family;
@@ -156,6 +167,7 @@
 
     .link {
         margin-top: 20px;
+
         a {
             padding: 3px 20px;
         }
