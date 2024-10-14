@@ -33,14 +33,21 @@
                 img {
                     //modifier pour la taille de l'imageF
                     width: fit-content;
-                    height: 40px;
-                    object-position: 0px -5px;
+                    height: 20px;
+                    object-position: 0px -2px;
                     overflow: visible;
                 }
             }
 
             @include breakpoints(sm) {
                 font-size: 50px;
+
+                div {
+                    img {
+                        height: 40px;
+
+                    }
+                }
             }
         }
     }

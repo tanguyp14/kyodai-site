@@ -13,6 +13,6 @@
             <p class="sous-titre"><?php echo $sous_titre; ?></p>
             <p class="z-t"><?php echo $zone_de_texte; ?></p>
             <p class="z-t-t"><?php echo $zone_de_gras; ?></p>
-            <span class="link"><a href="<?php echo $lien; ?>" alt="Vers la demande de Kit papier" class="cta">Choper mon kit</a></span>
+            <span class="link red"><a href="<?php echo $lien; ?>" alt="Vers la demande de Kit papier" class="cta">Choper mon kit</a></span>
         </div>
     </section>
