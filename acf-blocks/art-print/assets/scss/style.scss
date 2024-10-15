@@ -1,0 +1,22 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.art-print{
+    background-image: url('../TRAM_BG.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: fit-content;
+    .desk{
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+    }
+    .mobile{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        video,img{
+            max-width: 100%;
+        }
+    }
+}

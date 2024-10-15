@@ -14,11 +14,4 @@
             <span data-aos="fade-in" data-aos-delay="600" class="right"><?php echo wp_get_attachment_image($pm, 'full') ?></span>
 
         </div>
-
-        <!-- <div class="video-container" data-aos="fade-up" data-aos-delay="1000">
-            <video loop autoplay muted>
-                <source src="http://localhost:3000/wp-content/themes/kyodai/dist/image/video.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-        </div> -->
     </section>

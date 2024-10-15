@@ -29,7 +29,7 @@
             }
 
             &.left {
-                width: 20%; // 216px converted to vw based on 1920px width
+                width: 20%;
                 left: -16%;
                 top: 25%;
                 z-index: 2;
@@ -42,7 +42,7 @@
             }
 
             &.right {
-                width: 20%; // 226px converted to vw based on 1920px width
+                width: 20%;
                 z-index: 2;
                 right: -1%;
                 position: absolute;

@@ -1,0 +1,106 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.art-banniere {
+    height: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: move-bg 60s alternate infinite ease-in-out;
+    @include breakpoints(xxxxl) {
+        animation: none;
+    }
+
+    @include breakpoints(lg) {
+        height: 90vh;
+    }
+
+    .container-images {
+        max-width: 60vw;
+
+        @include breakpoints(lg) {
+            max-width: 40vw;
+        }
+
+        margin-top: 5vw;
+        display: flex;
+        position: relative;
+
+        span.image {
+            display: flex;
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+            }
+
+            &:nth-child(1) {
+                //image central
+                position: relative;
+                width: 50vw;
+                z-index: 10;
+            }
+
+            &:nth-child(2) {
+                width: 40%;
+                left: 36%;
+                top: -35%;
+                rotate: -5deg;
+                z-index: 2;
+            }
+
+            &:nth-child(3) {
+                width: 47%;
+                rotate: 15deg;
+                left: -18%;
+                bottom: -35%;
+                z-index: 2;
+            }
+
+            &:nth-child(4) {
+                width: 45%;
+                right: -39%;
+                rotate: 15deg;
+                top: -29%;
+                z-index: 2;
+            }
+
+            &:nth-child(5) {
+                // accomagnez
+                width: 60%;
+                bottom: -25%;
+                right: -5%;
+                rotate: 1deg;
+                z-index: 2;
+            }
+
+            &:nth-child(6) {
+                //conseils amigos
+                width: 32%;
+                left: -20%;
+                top: -57%;
+                rotate: -15deg;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+@keyframes move-bg {
+    0% {
+        background-position: center center;
+    }
+
+    50% {
+        background-position: right center;
+    }
+
+    100% {
+        background-position: left center;
+    }
+}

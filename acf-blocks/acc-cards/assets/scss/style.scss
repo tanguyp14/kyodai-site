@@ -16,6 +16,15 @@
         background-size: cover;
         padding: 90px 0;
     }
+    @include breakpoints(md){
+        display: grid;
+        grid-gap: 2vw;
+        grid-template-rows: 1fr;
+        max-width: 90vw;
+        margin: auto;
+        justify-content: center;
+        grid-template-columns: repeat(3, 300px);
+    }
     @include breakpoints(lg) {
         display: grid;
         grid-gap: 2vw;
@@ -142,7 +151,7 @@
 
             .add_on {
                 top: 7%;
-                left: -4vw;
+                left: -2vw;
                 width: 20%;
                 aspect-ratio: 93/122;
                 animation: rotate infinite 2.5s ease-in-out alternate;

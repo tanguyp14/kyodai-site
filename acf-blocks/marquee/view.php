@@ -3,7 +3,7 @@
     extract($fields);
     $unique_id = uniqid();
     ?>
-    <section id="<?php echo $unique_id; ?>" class="marquee" data-aos="flip-down" data-aos-offset="0" data-aos-delay="300" data-speed="<?php echo $speed; ?>">
+    <section id="<?php echo $unique_id; ?>" class="marquee" data-speed="<?php echo $speed; ?>">
         <span class="<?php echo $unique_id; ?> marquee_text">
             <div class="inside">
                 <span><?php echo $le_texte; ?></span>
