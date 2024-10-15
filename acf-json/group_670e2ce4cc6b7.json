@@ -23,6 +23,26 @@
             "mime_types": ""
         },
         {
+            "key": "field_670e83c9c8879",
+            "label": "Image Desk Static",
+            "name": "image_desk_static",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_670e2cf833a88",
             "label": "Images Mobile",
             "name": "images_mobile",
@@ -130,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728991877
+    "modified": 1729004503
 }
