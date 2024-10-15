@@ -4,8 +4,11 @@
     background-image: url('../TRAM_BG.png');
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: fit-content;
+    @include breakpoints(md){
+        background-size: contain;
+    }
     .desk{
         display: flex;
         justify-content: center;

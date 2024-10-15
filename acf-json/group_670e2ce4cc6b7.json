@@ -66,6 +66,27 @@
                     "parent_repeater": "field_670e2cf833a88"
                 },
                 {
+                    "key": "field_670e527dfebe6",
+                    "label": "Image Mobile ALT",
+                    "name": "image_mobile_alt",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_670e2cf833a88"
+                },
+                {
                     "key": "field_670e2d1a33a8a",
                     "label": "Delay",
                     "name": "delay",
@@ -109,5 +130,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728987177
+    "modified": 1728991877
 }
