@@ -1,6 +1,6 @@
 		<a href="#page" class="back-top">↑<span>Retour en haut</span></a>
 		</main><!-- /#main-content -->
-		<?php $footer = get_field('footer', 'option'); ?>
+		<?php $footer = get_field('footer', 'option');?>
 		<?php if (!empty($footer)) : extract($footer) ?>
 			<?php if (is_front_page()) : ?>
 				<footer class="main" role="contentinfo">
@@ -53,9 +53,9 @@
 						<div class="right">
 							<?php if (!empty($gallery)) : ?>
 								<?php foreach ($gallery as $image) : ?>
-									<div class="gallery-item" data-aos="zoom-in" data-aos-delay="<?php echo rand(1, 8) * 100; ?>">
-										
-										 
+									<div class="gallery-item" data-aos="zoom-in" data-aos-delay="<?php echo (rand(1, 8) * 100); ?>">
+
+
 										<img src="<?php echo wp_get_attachment_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
 									</div>
 								<?php endforeach; ?>

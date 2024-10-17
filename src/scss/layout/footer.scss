@@ -324,11 +324,11 @@ footer.other {
             @include breakpoints(sm) {
                 &:after {
                     content: '';
-                    width: 15vw;
+                    width: 12vw;
                     aspect-ratio: 237/142;
                     position: absolute;
                     transform-origin: bottom right;
-                    translate: -90% -70%;
+                    translate: -90% -60%;
                     top: 0;
                     z-index: 10;
                     background-image: url('../image/CONVAINCU.png');
@@ -341,8 +341,6 @@ footer.other {
             .gif {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
 
                 img {
                     width: 100%;
@@ -352,7 +350,6 @@ footer.other {
 
                 h3 {
                     font-size: 35px;
-                    text-align: center;
                     padding: 0;
                     margin: 0;
                     text-transform: uppercase;
@@ -360,12 +357,14 @@ footer.other {
                     width: 100%;
 
                     @include breakpoints(sm) {
-                        font-size: 3vw;
+                        font-size: 2.4vw;
                     }
                 }
             }
 
             .gif {
+                justify-content: center;
+                align-items: center;
                 position: absolute;
                 bottom: -25px;
                 left: -100vw;
