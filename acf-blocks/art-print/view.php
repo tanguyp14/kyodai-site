@@ -8,7 +8,7 @@
     <section class="art-print">
         <?php if (!wp_is_mobile()) : ?>
             <div class="media-container desk" data-aos="fade-up">
-                <?php if ($is_safari && $is_ios) : ?>
+                <?php if ($is_safari) : ?>
                     <img src="<?php echo wp_get_attachment_url($image_desk_static); ?>">
                 <?php else : ?>
                     <video loop autoplay muted>

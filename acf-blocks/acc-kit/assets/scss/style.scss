@@ -7,7 +7,7 @@
     align-items: center;
 
     @include breakpoints(sm) {
-        margin-top: 150px;
+        margin-top: 10vh;
         flex-direction: row;
     }
 
@@ -17,22 +17,23 @@
         height: 100%;
         display: flex;
         align-items: center;
-        rotate: 90deg;
-        z-index: -1;
+        z-index: 3;
 
         @include breakpoints(sm) {
             width: 60%;
-            rotate: 0deg;
-            z-index: 3;
         }
 
         img {
-            width: 100%;
+            width: 120%;
+            left: -20%;
             height: auto;
             position: absolute;
-            left: -20px;
             animation: hand infinite 5s alternate ease-in-out;
             transform-origin: left center;
+            @include breakpoints(sm) {
+                width: 100%;
+                left: -20px;
+            }
         }
     }
 
@@ -137,7 +138,7 @@
 
 [data-aos="right"] {
     transition-property: transform;
-    transform: translateX(-1920px);
+    transform: translateX(-100vw);
 
     &.aos-animate {
         transform: translateX(0px);
