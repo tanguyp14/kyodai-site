@@ -5,8 +5,8 @@ $border-size: 5px;
 .pictos {
     &_container {
         border: none;
-        background-color: $orange;
         @include breakpoints(sm) {
+            background-color: $orange;
             border-top: $border-size solid $black;
             border-bottom: $border-size solid black;
         }
@@ -16,7 +16,6 @@ $border-size: 5px;
     margin: auto;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
     
     @include breakpoints(sm) {
         padding: 0 10vw;
@@ -35,7 +34,14 @@ $border-size: 5px;
         height: 150px;
         gap: 1vw;
         padding: 20px;
+        background-color: $orange;
+        &:nth-child(1) {
+            top: $border-size;
+        }
 
+        &:nth-child(3) {
+            top: -$border-size;
+        }
         
         @include breakpoints(sm) {
             padding: 0 20px;

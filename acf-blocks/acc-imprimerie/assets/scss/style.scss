@@ -2,7 +2,7 @@
 
 .imprimerie {
     display: flex;
-    max-width: 95vw;
+    max-width: 78vw;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -18,7 +18,7 @@
     .left {
         width: 100%;
         display: grid;
-        grid-template-rows: 9vw 8.5vw 6vw;
+        grid-template-rows: 6vw 8vw 6vw;
         align-items: center;
 
         @include breakpoints(lg) {
@@ -29,7 +29,7 @@
         h1 {
             font-family: $primary-font-family;
             color: $blue;
-            font-size: 8.5vw;
+            font-size: 7vw;
             margin: 0px;
 
             @include breakpoints(lg) {
@@ -48,6 +48,21 @@
             margin: 15px 0px 0px;
             rotate: -2deg;
             font-weight: 100;
+            transition: rotate, color, background-color 0.5s ease-in-out;
+
+            a {
+                color: $orange;
+                text-decoration: none;
+                transition: rotate, color, background-color 0.5s ease-in-out;
+            }
+
+            &:hover {
+                rotate: 2deg;
+
+                a {
+                    color: white;
+                }
+            }
 
             @include breakpoints(lg) {
                 font-size: 47px;

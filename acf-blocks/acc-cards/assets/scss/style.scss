@@ -14,7 +14,10 @@
         background-position: bottom center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 90px 0;
+        padding: 0px 0 50px;
+        @include breakpoints(md){
+            padding: 90px 0;
+        }
     }
     @include breakpoints(md){
         display: grid;

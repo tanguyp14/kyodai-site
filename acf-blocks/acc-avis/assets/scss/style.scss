@@ -170,9 +170,11 @@
     }
 
     .link {
+        margin: auto;
         margin-top: 20px;
-
         a {
+            width: 300px;
+            font-size: 25px;
             padding: 3px 20px;
         }
     }

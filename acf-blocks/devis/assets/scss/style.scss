@@ -1,193 +1,63 @@
 @import '../../../../src/scss/abstracts/all.scss';
 // Call all variables 
 
-.devis_page {
-    display: grid;
-    grid-template-columns: 1fr;
+.formulaire{
+    $border-size: 5px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    justify-content: center;
     align-items: center;
-
-    @include breakpoints('sm') {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .one {
-        display: flex;
-        height: auto;
-        width: 100%;
-        justify-content: center;
-        order: 2;
-
-
-        .formulaire {
-            display: grid;
-            grid-template-columns: auto;
-            margin: auto;
-            max-width: 100%;
-            gap: 30px;
-
-            div {
-                justify-self: center;
-                align-self: end;
-                width: 90%;
-                max-width: 100vw;
-                display: block;
-                grid-template-columns: 1fr 1fr;
-
-                p {
-                    margin-bottom: 10px;
-                }
-
-                @include breakpoints('sm') {
-                    display: grid;
-                    gap: 10px;
-
-                    p {
-                        margin-bottom: 0;
-                    }
-                }
-
-                h2 {
-                    grid-column: 1 / 3;
-                }
-
-                p {
-                    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-
-                    &:hover {
-                        color: $red;
-                    }
-                }
-
-                input {
-
-                    max-width: 100%;
-
-                    &[type="number"],
-                    &[type="text"],
-                    &[type="email"] {
-                        width: 100%;
-                        height: 2rem;
-                        border-radius: 5px;
-                        border: 1px solid $white;
-                        padding: 10px;
-                        box-sizing: border-box;
-                    }
-
-                    &[type="submit"] {
-                        display: flex;
-                        justify-content: center;
-                        flex-direction: column;
-                        align-items: center;
-                        width: auto;
-                        margin: auto;
-                        border-radius: 5px;
-                        border: 1px solid $white;
-                        background-color: $black;
-                        color: $white;
-                        padding: 10px 50px;
-                        font-variation-settings: 'wdth' 100, 'wght' 450;
-                        text-transform: uppercase;
-                        
-                    }
-                }
-
-                .wpcf7-radio {
-                    display: flex;
-                    gap: 10px;
-
-                    span label {
-                        display: flex;
-                        justify-content: center;
-                        flex-direction: row;
-                        width: auto;
-                        gap: 10px;
-
-                    }
-                }
-
-                textarea {
-                    width: 100%;
-                    border-radius: 5px;
-                    border: 1px solid $white;
-                    padding: 10px;
-                    height: 5rem;
-                    max-height: 100%;
-                    max-width: 100%;
-                }
-
-                &.left {
-                    p {
-                        &:last-of-type {
-                            grid-column: 1 / 3;
-                        }
-                    }
-
-                }
-
-                &.right {
-                    p {
-
-                        &:nth-child(6),
-                        &:last-of-type {
-                            grid-column: 1 / 3;
-
-                        }
-                    }
-                }
-
-                &.end {
-                    grid-template-columns: 1fr;
-                    max-width: 100vw;
-
-                    h2 {
-                        grid-column: 1;
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-
-            h2 {
-                font-size: 1.5rem;
-                font-variation-settings: 'wdth' 100, 'wght' 450;
-            }
-
-            .wpcf7-not-valid-tip {
-                font-variation-settings: 'wdth' 100, 'wght' 250;
-                font-style: italic;
-            }
-        }
-    }
-
-    .two {
-        display: flex;
-        height: 20vh;
-        width: 100%;
-        order: 1;
-
-        @include breakpoints('sm') {
-            height: 80vh;
-            order: 2;
-
-        }
-
-        img {
-            border: 1px solid $black;
-            height: auto;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    .under {
-        text-align: center;
-        margin: 20px auto;
+    padding: 100px 0;
+    .form{
+        flex-direction: column;
         width: 90%;
-        max-width: 450px;
-        font-variation-settings: 'wdth' 100, 'wght' 250;
+        display: flex;
+        border: $border-size solid $black;
+        box-shadow: 10px 10px 0px $black;
+        border-radius: 20px;
+        overflow: hidden;
+       
+        @include breakpoints(sm){
+            width: 70%;
+        }
+        > h2{
+            background-color: $blue;
+            color: $white;
+            font-family: $primary-font-family;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-bottom: $border-size solid $black;
+            margin: 0;
+        }
+        &_content{
+            padding: 50px;
+            form{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+    .under_form{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h3{
+            text-transform: uppercase;
+            font-weight: 100;
+            color: $blue;
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        .link{
+            a{
+                width: 400px;
+                text-align: center;
+            }
+        }
     }
 }

@@ -2,15 +2,17 @@
     $fields = get_fields();
     extract($fields);
     ?>
-    <section class="devis_page is_full_page_mid">
-        <div class="one">
-            <?php if ($shortcode_devis) : ?>
-                <?php echo $shortcode_devis; ?>
-            <?php endif; ?>
+    <section class="formulaire">
+        <div class="form">
+            <h2><?php echo $titre_devis; ?></h2>
+            <div class="form_content">
+                <?php if ($shortcode_devis) : ?>
+                    <?php echo $shortcode_devis; ?>
+                <?php endif; ?>
+            </div>
         </div>
-        <div class="two pwl">
-            <?php if ($image) : ?>
-                <?php echo wp_get_attachment_image($image, 'full'); ?>
-            <?php endif; ?>
+        <div class="under_form">
+            <h3><?php echo $annonce; ?></h3>
+            <span class="link red"><a href="<?php echo $link ?>" alt="<?php echo $link_text ?>" class="cta"><?php echo $link_text ?></a></span>
         </div>
     </section>

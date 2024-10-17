@@ -1,0 +1,60 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.contact-banniere {
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .container-images {
+        max-width: 60vw;
+        left: -2%;
+        margin-top: 8vw;
+        display: flex;
+        position: relative;
+
+
+        @include breakpoints(lg) {
+            max-width: 40vw;
+        }
+
+
+        span.image {
+            display: flex;
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+            }
+
+            &:nth-child(1) {
+                //image central
+                position: relative;
+                width: 15vw;
+                z-index: 10;
+            }
+
+            &:nth-child(2) {
+                width: 75%;
+                rotate: -1deg;
+                right: -54%;
+                top: 5%;
+                z-index: 2;
+            }
+
+            &:nth-child(3) {
+                width: 94%;
+                rotate: -17deg;
+                left: -47%;
+                top: -22%;
+                z-index: 2;
+            }
+        }
+    }
+}
