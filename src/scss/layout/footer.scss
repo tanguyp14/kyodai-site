@@ -299,12 +299,13 @@ footer.other {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         width: 100%;
+        align-items: center;
         padding-top: 120px;
 
         @include breakpoints(sm) {
             justify-content: flex-end;
+            align-items: flex-start;
             flex-direction: row;
         }
 
@@ -314,6 +315,7 @@ footer.other {
             gap: 20px;
             display: flex;
             flex-direction: column;
+            padding-bottom: 100px;
 
             @include breakpoints(sm) {
                 width: 20%;
@@ -356,6 +358,7 @@ footer.other {
                     text-transform: uppercase;
                     color: $orange;
                     width: 100%;
+
                     @include breakpoints(sm) {
                         font-size: 3vw;
                     }
@@ -363,8 +366,24 @@ footer.other {
             }
 
             .gif {
+                position: absolute;
+                bottom: -25px;
+                left: -100vw;
+                animation: walk infinite 5s linear;
+
                 img {
-                    width: 120%;
+                    width: 50%;
+                }
+
+                @include breakpoints(sm) {
+                    animation: unset;
+                    position: relative;
+                    bottom: 0;
+                    left: 0;
+
+                    img {
+                        width: 120%;
+                    }
                 }
             }
         }
@@ -442,5 +461,15 @@ footer.other {
         text-align: center;
         font-size: 0.8rem;
         padding: 20px 0;
+    }
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 300px));
     }
 }

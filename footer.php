@@ -53,7 +53,9 @@
 						<div class="right">
 							<?php if (!empty($gallery)) : ?>
 								<?php foreach ($gallery as $image) : ?>
-									<div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+									<div class="gallery-item" data-aos="zoom-in" data-aos-delay="<?php echo rand(1, 8) * 100; ?>">
+										
+										 
 										<img src="<?php echo wp_get_attachment_url($image); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
 									</div>
 								<?php endforeach; ?>

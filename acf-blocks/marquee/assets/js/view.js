@@ -1,5 +1,5 @@
 (function ($) {
-		$(window).on('load', function () {
+		$(document).ready(function () {
 			$('.marquee').each(function () {
 				var id = $(this).attr('id');
 				var speed = $(this).attr('data-speed');
