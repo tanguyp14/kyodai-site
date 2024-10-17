@@ -22,25 +22,26 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body  <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<div id="page" class="site">
+	<div id="page" class="site <?php echo get_the_title(); ?>">
 	<?php if (wp_is_mobile()) { ?>
 		<span class="button_mobile">
 			<span></span>
 			<span></span>
 			<span></span>
 		</span>
-		<?php } ?>
-		<header id="masthead" class="header 
-		<?php
-		if (wp_is_mobile()) {
-			echo ' mobile';
-		};
-		if (!is_front_page()) {
-			echo ' sticky';
-		}
-		?>" role="banner">
-			<?php get_template_part('template-parts/navigation/primary'); ?>
-		</header><!-- #masthead -->
-		<main id="main-content" role="main">
+	<?php } ?>
+	<header id="masthead" class="header 
+	<?php
+	if (wp_is_mobile()) {
+		echo ' mobile';
+	};
+	if (!is_front_page()) {
+		echo ' sticky';
+	}
+	?>" role="banner">
+		<?php get_template_part('template-parts/navigation/primary'); ?>
+	</header><!-- #masthead -->
+	<main id="main-content" role="main">
+		

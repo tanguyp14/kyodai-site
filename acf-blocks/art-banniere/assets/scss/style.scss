@@ -19,6 +19,7 @@
 
     .container-images {
         max-width: 60vw;
+        left: -4%;
 
         @include breakpoints(lg) {
             max-width: 40vw;
