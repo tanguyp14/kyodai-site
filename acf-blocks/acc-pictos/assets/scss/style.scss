@@ -53,10 +53,12 @@ $border-size: 5px;
 
             &:nth-child(1) {
                 left: $border-size;
+                top: unset;
             }
 
             &:nth-child(3) {
                 left: -$border-size;
+                top: unset;
             }
         }
 

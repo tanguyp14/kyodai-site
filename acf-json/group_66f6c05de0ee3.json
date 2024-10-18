@@ -68,6 +68,24 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67120d8371d3b",
+            "label": "Couleur BG",
+            "name": "bg_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FF5e39",
+            "enable_opacity": 0,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -88,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728638648
+    "modified": 1729236545
 }
