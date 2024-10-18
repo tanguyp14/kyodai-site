@@ -1,0 +1,109 @@
+@import '../../../../src/scss/abstracts/all.scss';
+// Call all variables 
+
+.call_formulaire {
+    z-index: 10;
+    width: 90%;
+    aspect-ratio: 333 / 260;
+    display: flex;
+    justify-self: center;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 5%;
+    
+    @include breakpoints(sm) {
+        width: 70%;
+        aspect-ratio: 666 / 248;
+        flex-direction: row;
+    }
+
+    div {
+        width: 100%;
+        height: 100%;
+        @include breakpoints(sm) {
+            width: 50%;
+        }
+
+        &.phone {
+            position: relative;
+
+            .movable {
+                position: absolute;
+                background-image: url('../TELEPHONE.svg');
+                aspect-ratio: 49 / 75;
+                background-repeat: no-repeat;
+                width: 40%;
+                bottom: 20.3%;
+                left: 10%;
+                transform-origin: left bottom;
+                animation: phone 2s ease-in-out infinite alternate;
+            }
+
+            .fix {
+                display: flex;
+                background-image: url('../ILLU_TEL.svg');
+                background-size: contain;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &.mail {
+            position: relative;
+
+            .movable {
+                position: absolute;
+                background-image: url('../ENVELOPPE.svg');
+                width: 40%;
+                aspect-ratio: 79 / 75;
+                background-repeat: no-repeat;
+                bottom: 13%;
+                left: 10%;
+                transform-origin: bottom center;
+                animation: enveloppe 3s ease-in-out infinite alternate;
+            }
+
+            .fix {
+                display: flex;
+                background-image: url('../ILLU_MAIL.svg');
+                background-size: contain;
+                background-position: bottom;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@keyframes phone {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: -25deg;
+    }
+
+}
+
+@keyframes enveloppe {
+    0% {
+        rotate: 0deg;
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(0%) translateY(-18%);
+    }
+
+    50% {
+        transform: translateX(0%) translateY(0%);
+    }
+
+    100% {
+        transform: translateX(0) translateY(-15%);
+    }
+}

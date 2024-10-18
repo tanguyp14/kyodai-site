@@ -1,6 +1,6 @@
 {
     "key": "group_665dd80e949aa",
-    "title": "Devis",
+    "title": "formulaire",
     "fields": [
         {
             "key": "field_67115c6782537",
@@ -26,26 +26,6 @@
             "key": "field_665dd80e717e6",
             "label": "Shortcode devis",
             "name": "shortcode_devis",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6711604da836c",
-            "label": "Annonce",
-            "name": "annonce",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -102,6 +82,56 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_671237c245dc6",
+            "label": "back_after",
+            "name": "back_after",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_671237d045dc7",
+            "label": "back_before",
+            "name": "back_before",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -109,7 +139,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/devis"
+                "value": "acf\/formulaire"
             }
         ]
     ],
@@ -122,5 +152,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729192020
+    "modified": 1729247194
 }

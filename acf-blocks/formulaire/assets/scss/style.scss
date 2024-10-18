@@ -1,15 +1,50 @@
 @import '../../../../src/scss/abstracts/all.scss';
 // Call all variables 
 
-.formulaire{
+.formulaire {
     $border-size: 5px;
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 100px 0;
-    .form{
+    padding: 50px 0;
+    position: relative;
+
+    .hand {
+        position: absolute;
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &.before {
+            width: 530px;
+            aspect-ratio: 41 / 30;
+            top: 34%;
+            left: calc(5% - 102.5px - 244px);
+            @include breakpoints(sm){
+                top: 20%;
+                left: -7%;
+                width: 33.6vw;
+            }
+
+        }
+
+        &.after {
+            width: 591px;
+            aspect-ratio: 44 / 30;
+            top: -154px;
+            right: -331px;
+            z-index: 11;
+            @include breakpoints(sm){
+                top: 0%;
+                right: -4%;
+                width: 33.6vw;
+            }
+        }
+    }
+
+    .form {
         flex-direction: column;
         width: 90%;
         display: flex;
@@ -17,11 +52,13 @@
         box-shadow: 10px 10px 0px $black;
         border-radius: 20px;
         overflow: hidden;
-       
-        @include breakpoints(sm){
+
+        @include breakpoints(sm) {
             width: 70%;
         }
-        > h2{
+
+
+        >h2 {
             background-color: $blue;
             color: $white;
             font-family: $primary-font-family;
@@ -31,32 +68,13 @@
             border-bottom: $border-size solid $black;
             margin: 0;
         }
-        &_content{
+
+        &_content {
             padding: 50px;
-            form{
+
+            form {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    }
-    .upper_form{
-        margin: 50px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        h3{
-            text-transform: uppercase;
-            font-weight: 100;
-            color: $blue;
-            font-size: 30px;
-            margin: 0;
-            padding: 0;
-        }
-        .link{
-            a{
-                width: 400px;
-                text-align: center;
             }
         }
     }

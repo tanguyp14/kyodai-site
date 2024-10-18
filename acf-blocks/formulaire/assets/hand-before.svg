@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800.6 585.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #201f25;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-width: 6px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke-width: 7px;
+      }
+
+      .cls-3 {
+        fill: #ffa956;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 136)  -->
+  <g>
+    <g id="Calque_1">
+      <g>
+        <path class="cls-3" d="M446.1,378.5s-148.6,100.7-256.3,89.6-59.4-94.9-59.4-94.9c0,0,117.5,16.7,265.3-80.8"/>
+        <path class="cls-1" d="M513.3,267.7s12.5,12,38.6-4.5,22.2-30,42.6-23.3,11.7,36.5-6.4,61.5c-34.1,47.2-88.8,44.9-88.8,44.9l-39,36.3s-33.3-7-51.9-42.8c-18.5-35.8-11.1-58.8-11.1-58.8l38.4-20.6s23-89.4,89.6-103.6v115.3"/>
+      </g>
+      <path class="cls-2" d="M514.3,345.4"/>
+      <path class="cls-2" d="M467.1,329"/>
+    </g>
+  </g>
+</svg>

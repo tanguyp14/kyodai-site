@@ -3,10 +3,8 @@
     extract($fields);
     ?>
     <section class="formulaire">
-        <div class="upper_form">
-            <span class="link red"><a href="<?php echo $link ?>" alt="<?php echo $link_text ?>" class="cta"><?php echo $link_text ?></a></span>
-        </div>
-        <div class="form">
+        <span data-aos="fade-left" class="hand after" style="background-image: url('<?php echo wp_get_attachment_url($back_after); ?>')"></span>
+        <div data-aos="fade-right" class="form">
             <h2><?php echo $titre_devis; ?></h2>
             <div class="form_content">
                 <?php if ($shortcode_devis) : ?>
@@ -14,4 +12,5 @@
                 <?php endif; ?>
             </div>
         </div>
+        <span data-aos="fade-right"class="hand before" style="background-image: url('<?php echo wp_get_attachment_url($back_before); ?>')"></span>
     </section>

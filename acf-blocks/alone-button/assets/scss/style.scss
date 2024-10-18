@@ -1,0 +1,83 @@
+@import '../../../../src/scss/abstracts/all.scss';
+// Call all variables 
+
+.upper_button {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            display: flex;
+            width: 28px;
+            aspect-ratio: 29 / 30;
+            display: flex;
+            right: 5%;
+            bottom: -11px;
+            rotate: -15deg;
+            background-image: url('../SOURIS.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: click 3s infinite ease-in-out alternate;
+
+            @include breakpoints(sm) {
+                right: 14%;
+                bottom: -10px;
+            }
+        }
+
+        a {
+            width: 90%;
+            padding: 0px 0px;
+            font-size: 25px;
+            border-radius: 20px;
+            text-align: center;
+
+            @include breakpoints(sm) {
+                font-size: clamp(20px ,2.5vw, 50px);
+                width: 70%;
+                border-radius: 100px;
+            }
+        }
+    }
+}
+
+@keyframes click {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    70% {
+        transform: translateY(0) translateX(0);
+    }
+
+    80% {
+        transform: translateY(-10px) translateX(-20px);
+    }
+
+    90% {
+        transform: translateY(-10px) translateX(-20px);
+        scale: 1;
+    }
+
+    95% {
+        transform: translateY(-10px) translateX(-20px);
+        scale: 0.9;
+    }
+
+    100% {
+        transform: translateY(-10px) translateX(-20px);
+        scale: 1;
+    }
+}
