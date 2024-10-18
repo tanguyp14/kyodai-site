@@ -1,13 +1,16 @@
 @import '../../../../src/scss/abstracts/all.scss';
 
 .contact-banniere {
-    height: 20vw;
+    height: 40vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    @include breakpoints(sm){
+        height: 20vw;
+    }
 
     .container-images {
         max-width: 60vw;
@@ -36,8 +39,11 @@
             &:nth-child(1) {
                 //image central
                 position: relative;
-                width: 15vw;
+                width: 30vw;
                 z-index: 10;
+                @include breakpoints(sm) {
+                    width: 15vw;
+                }
             }
 
             &:nth-child(2) {

@@ -9,6 +9,7 @@
     justify-self: center;
     align-items: flex-end;
     flex-direction: column;
+    margin: auto;
     gap: 5%;
     
     @include breakpoints(sm) {
