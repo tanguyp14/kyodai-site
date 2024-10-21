@@ -233,7 +233,7 @@ footer.other {
                 right: 0;
                 width: calc(100% + (26px));
                 background-position: left center;
-                background-image: url('../image/TRANSITION_MAIN_2.png');
+                background-image: url('../image/transi.svg');
             }
 
             @include breakpoints(sm) {
@@ -253,7 +253,7 @@ footer.other {
 
             &:after {
                 background-position: right center;
-                background-image: url('../image/TRANSITION_MAIN.png');
+                background-image: url('../image/transi_1.svg');
             }
 
             @include breakpoints(sm) {
@@ -331,7 +331,7 @@ footer.other {
                     translate: -90% -60%;
                     top: 0;
                     z-index: 10;
-                    background-image: url('../image/CONVAINCU.png');
+                    background-image: url('../image/CONVAINCU.svg');
                     background-size: contain;
                     background-repeat: no-repeat;
                 }

@@ -25,7 +25,7 @@
             display: flex;
             animation: hands 5s infinite;
             top: 30%;
-            background-image: url('../MAIN.png');
+            background-image: url('../MAIN.svg');
             @include breakpoints(md) {
                 top: 50%;
                 top: 38%;
