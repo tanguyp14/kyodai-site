@@ -130,6 +130,12 @@
             border: 5px solid $black;
     
         }
+        .wpcf7-response-output{
+            position: absolute;
+            max-width: 300px;
+            margin: -25% 15px;
+            bottom: 0;
+        }
     }
 }
 

@@ -27,9 +27,7 @@
             top: 30%;
             background-image: url('../MAIN.svg');
             @include breakpoints(md) {
-                top: 50%;
-                top: 38%;
-                width: 25%;
+                width: 21%;
             }
 
         }
@@ -39,7 +37,10 @@
             rotate: 17deg;
 
             @include breakpoints(md) {
-                left: calc(-13% - 14px);
+                left: calc(-9% - 14px);
+            }
+            @include breakpoints(xlg) {
+                left: calc(-9% - 22px);
             }
         }
 
@@ -49,7 +50,10 @@
             scale: -1 1;
 
             @include breakpoints(md) {
-                right: calc(-13% - 14px);
+                right: calc(-9% - 14px);
+            }
+            @include breakpoints(xlg) {
+                right: calc(-9% - 22px);
             }
         }
     }
