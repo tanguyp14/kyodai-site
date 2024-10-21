@@ -23,6 +23,24 @@
             "append": ""
         },
         {
+            "key": "field_67160547deae9",
+            "label": "Color BG",
+            "name": "color_bg",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#565656",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
             "key": "field_665dd80e717e6",
             "label": "Shortcode devis",
             "name": "shortcode_devis",
@@ -111,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729261231
+    "modified": 1729496416
 }
