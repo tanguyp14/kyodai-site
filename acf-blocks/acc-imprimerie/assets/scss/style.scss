@@ -29,7 +29,7 @@
         h1 {
             font-family: $primary-font-family;
             color: $blue;
-            font-size: 7vw;
+            font-size: 6.9vw;
             margin: 0px;
 
             @include breakpoints(lg) {
@@ -44,7 +44,7 @@
             padding: 0px 30px;
             border-radius: 100px;
             width: fit-content;
-            font-size: 5vw;
+            font-size: 4.9vw;
             margin: 15px 0px 0px;
             rotate: -2deg;
             font-weight: 100;
