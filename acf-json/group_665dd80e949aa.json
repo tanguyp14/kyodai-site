@@ -43,47 +43,6 @@
             "append": ""
         },
         {
-            "key": "field_67115fbd7fa07",
-            "label": "Link",
-            "name": "link",
-            "aria-label": "",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": "",
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 1,
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
-            "key": "field_67115fd07fa08",
-            "label": "Link text",
-            "name": "link_text",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_671237c245dc6",
             "label": "back_after",
             "name": "back_after",
@@ -152,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729247194
+    "modified": 1729261231
 }

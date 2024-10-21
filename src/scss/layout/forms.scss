@@ -1,0 +1,47 @@
+form {
+    width: 100%;
+    gap: 15px;
+    grid-row: auto;
+    text-align: left;
+    display: flex;
+
+    label {
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $black;
+        margin-bottom: 10px;
+    }
+
+    p:last-of-type {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        border: 2.5px solid $black;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: $blue;
+
+        &::placeholder {
+            color: $orange;
+        }
+
+        &[type='submit'] {
+            background-color: $red;
+            color: $white;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: fit-content;
+            border-radius: 30px;
+            align-self: flex-end;
+
+            &:hover {
+                background-color: $orange;
+            }
+        }
+    }
+}

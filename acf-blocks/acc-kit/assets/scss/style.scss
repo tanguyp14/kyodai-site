@@ -2,11 +2,11 @@
 
 .kit_papier {
     display: flex;
-    height: 600px;
     flex-direction: column;
     align-items: center;
-
+    
     @include breakpoints(sm) {
+        height: 600px;
         margin-top: 10vh;
         flex-direction: row;
     }
@@ -15,6 +15,7 @@
         width: 80%;
         position: relative;
         height: 100%;
+        min-height: 250px;
         display: flex;
         align-items: center;
         z-index: 3;
@@ -38,15 +39,18 @@
     }
 
     .text_pack {
-        width: auto;
+        width: fit-content;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 5%;
 
         @include breakpoints(sm) {
             text-align: right;
             align-items: flex-end;
+            padding: 0;
+            padding-right: 5%;
         }
 
         h2 {
@@ -108,6 +112,23 @@
                     left: -15px;
                 }
             }
+        }
+        
+        .wpcf7{
+            margin-top: 20px;
+            max-width: 330px;
+        }
+        .form_container{
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 5px solid $black;
+    
         }
     }
 }

@@ -3,27 +3,6 @@
     "title": "acc-kit-papier",
     "fields": [
         {
-            "key": "field_6707a17d7a834",
-            "label": "Lien",
-            "name": "lien",
-            "aria-label": "",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": "",
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 1,
-            "multiple": 0,
-            "allow_null": 0
-        },
-        {
             "key": "field_6707a1ba7a835",
             "label": "Image",
             "name": "image",
@@ -89,6 +68,50 @@
             "append": ""
         },
         {
+            "key": "field_671260d571d63",
+            "label": "Formulaire ou Lien",
+            "name": "formulaire_ou_lien",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Formulaire",
+            "ui_off_text": "Lien",
+            "ui": 1
+        },
+        {
+            "key": "field_6707a17d7a834",
+            "label": "Lien",
+            "name": "lien",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_671260d571d63",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
+        },
+        {
             "key": "field_6707a1efde6be",
             "label": "Zone de texte",
             "name": "zone_de_texte",
@@ -96,7 +119,15 @@
             "type": "textarea",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_671260d571d63",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -116,7 +147,15 @@
             "type": "textarea",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_671260d571d63",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -127,6 +166,34 @@
             "rows": 3,
             "placeholder": "",
             "new_lines": "br"
+        },
+        {
+            "key": "field_6712613a0adde",
+            "label": "ShortCode Formulaire",
+            "name": "shortcode_formulaire",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_671260d571d63",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -147,5 +214,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728553863
+    "modified": 1729258225
 }
