@@ -10,6 +10,7 @@
                 <?php if ($is_safari) : ?>
                     <img src="<?php echo wp_get_attachment_url($image_desk_static); ?>">
                 <?php else : ?>
+
                     <video loop autoplay muted>
                         <source src="<?php echo wp_get_attachment_url($image_desk); ?>" type="video/webm">
                         Your browser does not support the video tag.
@@ -20,17 +21,30 @@
         <?php if (wp_is_mobile()) : ?>
             <?php foreach ($images_mobile as $cake) : extract($cake) ?>
                 <?php if ($is_safari) : ?>
-                    <div class="media-container mobile" data-aos="fade-up" data-aos="<?php echo $delay ?>">
-                        <div class="image-safari">
-                            <img src="<?php echo wp_get_attachment_url($image_mobile_alt); ?>">
+                    <?php if ($link) : ?>
+                        <a href="<?php echo $link; ?>" alt="<?php echo $link; ?>">
+                        <?php endif; ?>
+                        <div class="media-container mobile" data-aos="fade-up" data-aos="<?php echo $delay ?>">
+
+                            <div class="image-safari">
+                                <img src="<?php echo wp_get_attachment_url($image_mobile_alt); ?>">
+                            </div>
                         </div>
-                    </div>
+                        <?php if ($link) : ?>
+                        </a>
+                    <?php endif; ?>
                 <?php else : ?>
-                    <div class="media-container mobile" data-aos="fade-up" data-aos="<?php echo $delay ?>">
-                        <video loop autoplay muted>
-                            <source src="<?php echo wp_get_attachment_url($image_mobile); ?>" type="video/webm">
-                            Your browser does not support the video tag.
-                        </video>
+                    <?php if ($link) : ?>
+                        <a href="<?php echo $link; ?>" alt="<?php echo $link; ?>">
+                        <?php endif; ?>
+                        <div class="media-container mobile" data-aos="fade-up" data-aos="<?php echo $delay ?>">
+                            <video loop autoplay muted>
+                                <source src="<?php echo wp_get_attachment_url($image_mobile); ?>" type="video/webm">
+                                Your browser does not support the video tag.
+                            </video>
+                            <?php if ($link) : ?>
+                        </a>
+                    <?php endif; ?>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
