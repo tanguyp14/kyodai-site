@@ -12,16 +12,13 @@
         display: flex;
         justify-content: center;
         padding: 30px 0;
+        max-width: 80vw;
+        margin: auto;
     }
 
     .mobile {
         display: flex;
         justify-content: center;
         padding: 10px 0;
-
-        video,
-        img {
-            max-width: 100%;
-        }
     }
 }

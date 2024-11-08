@@ -17,10 +17,13 @@
             display: flex;
             font-family: $secondary-font-family;
             text-transform: uppercase;
-            font-size: 50px;
+            font-size: 30px;
             gap: 20px;
             width: fit-content;
+            @include breakpoints(sm){
+                font-size: 50px;
 
+            }
             div {
                 width: fit-content;
                 display: flex;
@@ -31,10 +34,15 @@
                 img {
                     //modifier pour la taille de l'imageF
                     width: auto;
-                    height: 40px;
                     overflow: visible;
                     position: relative;
+                    height: 20px;
+
                     top: -2px;
+                    @include breakpoints(sm){
+                        height: 40px;
+        
+                    }
                 }
             }
         }

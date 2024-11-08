@@ -3,29 +3,9 @@
     "title": "art-print",
     "fields": [
         {
-            "key": "field_670e2ce533a87",
-            "label": "Image Desk",
-            "name": "image_desk",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_670e83c9c8879",
-            "label": "Image Desk Static",
-            "name": "image_desk_static",
+            "key": "field_6723aefd359d8",
+            "label": "Lottie desk",
+            "name": "lottie_desk",
             "aria-label": "",
             "type": "file",
             "instructions": "",
@@ -44,8 +24,8 @@
         },
         {
             "key": "field_670e2cf833a88",
-            "label": "Images Mobile",
-            "name": "images_mobile",
+            "label": "Images Lottie",
+            "name": "images_lottie",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -66,8 +46,8 @@
             "sub_fields": [
                 {
                     "key": "field_670e2d0b33a89",
-                    "label": "Image Mobile",
-                    "name": "image_mobile",
+                    "label": "Lottie",
+                    "name": "lottie",
                     "aria-label": "",
                     "type": "file",
                     "instructions": "",
@@ -82,28 +62,7 @@
                     "library": "all",
                     "min_size": "",
                     "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_670e2cf833a88"
-                },
-                {
-                    "key": "field_670e527dfebe6",
-                    "label": "Image Mobile ALT",
-                    "name": "image_mobile_alt",
-                    "aria-label": "",
-                    "type": "file",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "id",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "",
+                    "mime_types": ".json",
                     "parent_repeater": "field_670e2cf833a88"
                 },
                 {
@@ -167,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729522374
+    "modified": 1730391851
 }

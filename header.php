@@ -18,6 +18,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
 	<?php wp_head(); ?>
 </head>

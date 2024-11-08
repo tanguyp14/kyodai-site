@@ -87,3 +87,22 @@ function formatValue($value) {
 
 	return $formattedValue;
 }
+
+function autoriser_upload_json($mime_types) {
+    // Ajout du type MIME pour les fichiers JSON
+    $mime_types['json'] = 'application/json';
+    return $mime_types;
+}
+add_filter('upload_mimes', 'autoriser_upload_json');
+
+// Désactiver la vérification MIME pour les fichiers JSON uniquement
+function desactiver_verification_json($data, $file, $filename, $mimes) {
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if ($ext === 'json') {
+        $data['ext'] = 'json';
+        $data['type'] = 'application/json';
+    }
+    return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'desactiver_verification_json', 10, 4);
+
