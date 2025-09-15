@@ -20,7 +20,30 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
+  <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfq53cqAAAAAAxaMZA1_2vSeORyAczZQeDTY9LZ"></script> -->
+
 	<?php wp_head(); ?>
+
+<!-- Balises Open Graph générales -->
+<meta property="og:title" content="Kyodai - Atelier d'impression" />
+<meta property="og:description" content="Impression de qualité à Caen" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kyodai" />
+<meta property="og:author" content="Kyodai" />
+
+
+<?php
+// Définir l'image par défaut pour Open Graph
+$image_url = get_template_directory_uri() . '/image.png';
+
+if (file_exists(get_template_directory() . '/image.png')) {
+    echo '<meta property="og:image" content="' . esc_url($image_url) . '" />';
+}
+
+// URL principale du site
+echo '<meta property="og:url" content="' . esc_url(home_url()) . '" />';
+?>
+	
 </head>
 
 <body  <?php body_class(); ?>>

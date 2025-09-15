@@ -1,0 +1,55 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+// Call all variables 
+.contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin: 11vh auto;
+
+    @include breakpoints('sm') {
+        flex-direction: row;
+        max-width: 90vw;
+    }
+
+    div {
+        width: 90%;
+        height: 100%;
+
+        &.right {
+            border: outside 1px solid $black;
+            padding: 1px;
+
+            @include breakpoints('sm') {
+                flex-direction: row;
+                width: 70%;
+            }
+
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &.left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+            @include breakpoints('sm') {
+                width: 30%;
+            }
+
+            a {
+                text-decoration: none;
+                color: $red;
+            }
+        }
+
+    }
+}

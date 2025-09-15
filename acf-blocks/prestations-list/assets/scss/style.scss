@@ -1,0 +1,18 @@
+@import '../../../../src/scss/abstracts/all.scss';
+
+.prestations-filter{
+    margin-top: 16vh;
+}
+
+#prestations-list-container{
+    .prestations-list{
+        margin: 0;
+        padding: 0;
+        .prestation-item{
+            list-style: none;
+            &::marker{
+                display: none;
+            }
+        }
+    }
+}
