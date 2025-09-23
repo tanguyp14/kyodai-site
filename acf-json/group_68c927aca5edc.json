@@ -1,0 +1,208 @@
+{
+    "key": "group_68c927aca5edc",
+    "title": "Prestation onglets",
+    "fields": [
+        {
+            "key": "field_68d0f15d7e4b3",
+            "label": "Prestation detail",
+            "name": "prestation_detail",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68d0f1967e4b4",
+                    "label": "Nom onglet",
+                    "name": "nom_onglet",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
+                    "key": "field_68d0f5aa7e4b6",
+                    "label": "Format(s)",
+                    "name": "format",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Si vide = ne s'affiche pas",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 5,
+                    "placeholder": "",
+                    "new_lines": "wpautop",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
+                    "key": "field_68d0fb2a2c77e",
+                    "label": "Papier(s) Dispo",
+                    "name": "papier",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Si vide = ne s'affiche pas",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 5,
+                    "placeholder": "",
+                    "new_lines": "wpautop",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
+                    "key": "field_68d0f5c97e4b7",
+                    "label": "Finition(s) Dispo",
+                    "name": "finition",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Si vide = ne s'affiche pas",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 5,
+                    "placeholder": "",
+                    "new_lines": "wpautop",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
+                    "key": "field_68d0fa7ccbbf1",
+                    "label": "Conseils de pierre",
+                    "name": "kayou",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Si vide = ne s'affiche pas",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
+                    "key": "field_68d0fa8acbbf2",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
+                    "key": "field_68d0fa95cbbf3",
+                    "label": "Nom du client",
+                    "name": "nom_du_client",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/prestation-onglets"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1758533398
+}

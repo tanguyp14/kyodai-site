@@ -1,18 +1,145 @@
-@import '../../../../src/scss/abstracts/all.scss';
+@import "../../../../src/scss/abstracts/all.scss";
 
-.prestations-filter{
-    margin-top: 16vh;
+.prestations-filter {
+  margin: 16vh auto 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button {
+    text-transform: uppercase;
+    font-variation-settings: "wght" 500;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: $orange;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &.active,
+    &:hover {
+      color: $blue;
+      font-variation-settings: "wght" 900;
+      cursor: pointer;
+    }
+  }
+  @include breakpoints(sm, max) {
+    flex-direction: column;
+  }
 }
 
-#prestations-list-container{
-    .prestations-list{
-        margin: 0;
-        padding: 0;
-        .prestation-item{
-            list-style: none;
-            &::marker{
-                display: none;
-            }
-        }
+#prestations-list-container {
+  min-height: 1200px;
+  max-width: 1200px;
+  margin: auto;
+  .prestations-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    a {
+      text-decoration: none;
+      color: $black;
     }
+
+    .prestation-item {
+      position: relative;
+      flex-basis: calc(25% - 20px);
+      list-style: none;
+      border: 5px solid transparent;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .prestation-link {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .prestation-image {
+        max-width: 250px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          object-fit: cover;
+          object-position: center center;
+          width: 100%;
+          height: auto;
+        }
+      }
+      .prestation-title {
+        text-align: center;
+        font-family: $primary-font-family;
+        margin: 0;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+        padding: 0px 20px;
+        width: 100%;
+      }
+      .prestation-price {
+        opacity: 0;
+        height: 20px;
+        padding: 0px 20px;
+        margin: 10px 0px;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        .chevron-go {
+          background-image: url("../../../../dist/image/chevron-go.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+          display: block;
+          width: 12px;
+          height: 12px;
+        }
+      }
+      &::marker {
+        display: none;
+      }
+      &:hover {
+        background-color: $blue;
+        border: 5px solid $black;
+        .prestation-title {
+          color: $white;
+        //   text-align: left;
+        }
+        .prestation-price {
+          opacity: 1;
+          color: white;
+          p {
+            span {
+              font-weight: 900;
+            }
+          }
+        }
+      }
+    }
+    @include breakpoints(sm, max){
+      flex-direction: column;
+      .prestation-item {
+        width: 100%;
+        max-width: 300px;
+        background-color: $blue;
+        border: 5px solid $black;
+        .prestation-title {
+          color: $white;
+        //   text-align: left;
+        }
+        .prestation-price {
+          opacity: 1;
+          color: white;
+          p {
+            span {
+              font-weight: 900;
+            }
+          }
+        }
+      }
+    }
+  }
 }

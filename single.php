@@ -2,7 +2,7 @@
 
 get_header();
 
-the_title();
+// the_title();
 
 the_content();
 
