@@ -113,6 +113,28 @@
                     "parent_repeater": "field_68d0f15d7e4b3"
                 },
                 {
+                    "key": "field_68d272f780edf",
+                    "label": "Prix",
+                    "name": "prix",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68d0f15d7e4b3"
+                },
+                {
                     "key": "field_68d0fa7ccbbf1",
                     "label": "Conseils de pierre",
                     "name": "kayou",
@@ -204,5 +226,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1758533398
+    "modified": 1758622471
 }

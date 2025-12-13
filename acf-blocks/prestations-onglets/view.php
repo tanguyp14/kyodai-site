@@ -16,6 +16,9 @@ extract($fields);
             <div class="contenu <?php echo $nom_onglet ?>" data-tab="<?php echo $index ?>">
                 <?php if ($image != '') : ?>
                     <div class="contenu_image">
+                        <?php if ($nom_du_client != '') : ?>
+                            <p class="client"><?php echo $nom_du_client; ?></p>
+                        <?php endif; ?>
                         <?php echo wp_get_attachment_image($image, 'full'); ?>
                     </div>
                 <?php endif; ?>
@@ -37,6 +40,11 @@ extract($fields);
                             <h3>Finition(s) disponible(s) :</h3>
                             <div class="finition">
                                 <?php echo $finition ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($prix != '') : ?>
+                            <div class="format">
+                                <h3 class="prix"><?php echo $prix ?></h3>
                             </div>
                         <?php endif; ?>
                     </div>

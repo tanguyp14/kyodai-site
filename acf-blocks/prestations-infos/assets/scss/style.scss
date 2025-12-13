@@ -1,0 +1,250 @@
+@import "../../../../src/scss/abstracts/all.scss";
+
+
+.tylt_info_prestation {
+  max-width: 1200px;
+  display: flex;
+  margin: auto;
+  margin-top: 15vh;
+  gap: 20px;
+  padding: 5px;
+  position: relative;
+  .go_back {
+  max-width: 1200px;
+  text-align: left;
+  margin: auto;
+  position: absolute;
+  top: -50px;
+  display: flex;
+  width: fit-content;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  color: $black;
+  &:hover{
+    color: $orange;
+    font-weight: 800;
+  }
+}
+  @include breakpoints(sm, max) {
+    flex-direction: column-reverse;
+    margin-top: 100px;
+    gap: 70px;
+  }
+  .left {
+    width: 50%;
+    position: relative;
+    &:hover {
+      .arrows {
+        opacity: 1;
+      }
+      .tylt_info_prestation_images:after {
+        z-index: -1;
+      }
+    }
+    @include breakpoints(sm, max) {
+      width: 100%;
+    }
+    .tylt_info_prestation_images {
+      height: 300px;
+      position: relative;
+      background-color: $white;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 500px;
+        aspect-ratio: 494/319;
+        display: flex;
+        left: -412px;
+        bottom: -70px;
+        background-image: url("../MAIN_ORANGE.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .slick-track {
+        height: 300px;
+      }
+      &_image {
+        border: 5px solid $black;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+        height: 300px;
+        background-color: $white;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .arrows {
+      z-index: 10;
+      top: 0;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      span {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        background-image: url("../FLECHE.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: calc(50% - 15px);
+        cursor: pointer;
+        &.prev_arrow {
+          left: 10px;
+          rotate: 180deg;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            left: 8px;
+          }
+        }
+        &.next_arrow {
+          right: 10px;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
+  &_infos {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include breakpoints(sm, max) {
+      width: 70%;
+      min-width: 370px;
+      gap: 10px;
+      margin: auto;
+    }
+
+    h1 {
+      color: $blue;
+      text-transform: uppercase;
+      margin: 0;
+      font-size: 30px;
+    }
+    .sous_titre {
+      font-size: 20px;
+      color: $blue;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .texte {
+      p {
+        margin-bottom: 5px;
+        span {
+          font-weight: 800;
+          color: $orange;
+        }
+      }
+    }
+
+    .button-devis {
+      background-color: $red;
+      padding: 5px 20px;
+      font-family: $secondary-font-family;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $white;
+      width: fit-content;
+      border-radius: 20px;
+      border: 3px solid $black;
+      position: relative;
+      &:hover {
+        animation: giggle 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        aspect-ratio: 29 / 30;
+        display: flex;
+        right: -10px;
+        bottom: -10px;
+        rotate: -15deg;
+        background-image: url("../SOURIS.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: click 3s infinite ease-in-out alternate;
+      }
+    }
+  }
+  .tylt_lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.8);
+    z-index: -1000;
+    opacity: 0;
+    justify-self: center;
+    align-items: center;
+    &.active {
+      z-index: 1000;
+      opacity: 1;
+      .arrows_light {
+        display: flex;
+      }
+    }
+    &_slick {
+      max-width: 1200px;
+      overflow: hidden;
+      margin: auto;
+      padding: 20px;
+      &_image {
+        border: 5px solid $black;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+        height: 50vh;
+        background-color: $white;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .arrows_light {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+      height: 100%;
+      span {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        background-image: url("../FLECHE.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: calc(50% - 15px);
+        cursor: pointer;
+        &.prev_arrow_light {
+          left: 8%;
+          rotate: 180deg;
+          transition: all 0.2s ease-in-out;
+        }
+        &.next_arrow_light {
+          right: 8%;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}

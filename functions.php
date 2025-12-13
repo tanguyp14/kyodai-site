@@ -127,6 +127,7 @@ function filter_prestations_ajax()
 	$args = array(
 		'post_type' => 'prestation',
 		'posts_per_page' => -1,
+		'orderby' => 'rand',
 	);
 
 	// Si ce n'est pas "all", on filtre par taxonomie
@@ -156,8 +157,8 @@ function filter_prestations_ajax()
 					<h3 class="prestation-title"><?php the_title(); ?></h3>
 
 					<div class="prestation-price">
-                        <p><?php echo $price ?></p><span class="chevron-go"></span>
-                    </div>
+						<p><?php echo $price ?></p><span class="chevron-go"></span>
+					</div>
 
 				</li>
 			<?php $index = $index + 100;

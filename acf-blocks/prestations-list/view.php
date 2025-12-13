@@ -6,7 +6,7 @@ $categories = get_terms(array(
     'object_ids' => get_posts(array(
         'post_type' => 'prestation',
         'posts_per_page' => -1,
-        'fields' => 'ids'
+        'fields' => 'ids',
     ))
 ));
 ?>
@@ -34,6 +34,7 @@ $categories = get_terms(array(
     $args = array(
         'post_type' => 'prestation',
         'posts_per_page' => -1,
+        'orderby' => 'rand'
     );
     $prestations_query = new WP_Query($args);
 

@@ -1,54 +1,104 @@
 (function ($) {
-    document.addEventListener('DOMContentLoaded', function() {
-        const onglets = document.querySelectorAll('.nom_onglet .nom');
-        const contenus = document.querySelectorAll('.onglet .contenu');
+  document.addEventListener("DOMContentLoaded", function () {
+    const onglets = document.querySelectorAll(".nom_onglet .nom");
+    const contenus = document.querySelectorAll(".onglet .contenu");
+    let minHeightLocked = false; // Variable pour verrouiller le min-height
+    let lockedMinHeight = 0;    // Valeur verrouillée
 
-        // Ajouter la classe "active" au premier onglet et contenu par défaut
-        if (onglets.length > 0 && contenus.length > 0) {
-            onglets[0].classList.add('active');
-            contenus[0].classList.add('active');
-        }
+    // Initialisation
+    if (onglets.length > 0 && contenus.length > 0) {
+      onglets[0].classList.add("active");
+      contenus[0].classList.add("active");
+    }
 
-        // Fonction pour égaliser les hauteurs des .contenu_text
-        function equalizeHeights() {
-            const isMobile = window.matchMedia('(max-width: 767px)').matches;
-                const selector = isMobile ? '.contenu' : '.contenus_text';
-            let maxHeight = 0;
-            // Parcourir tous les .contenu_text (même ceux non actifs)
-            document.querySelectorAll(selector).forEach(el => {
-                // Réinitialiser temporairement la hauteur pour mesurer le contenu réel
-                el.style.height = 'auto';
-                const height = el.offsetHeight;
-                if (height > maxHeight) {
-                    maxHeight = height;
-                }
-            });
+    function equalizeHeights() {
+      const selector = ".contenu";
+      const selectorForMobile = '.nom_onglet';
+      const ongletSelector = '.onglet';
+      let maxHeight = 0;
+      const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 
-            // Appliquer la hauteur maximale à tous les .contenu_text
-            document.querySelectorAll(selector).forEach(el => {
-                el.style.height = maxHeight + 'px';
-            });
-        }
-
-        // Appeler la fonction au chargement et après chaque clic sur un onglet
-        equalizeHeights();
-
-        // Gestion du clic sur les onglets
-        onglets.forEach(onglet => {
-            onglet.addEventListener('click', function() {
-                const tabId = this.getAttribute('data-tab');
-                onglets.forEach(o => o.classList.remove('active'));
-                contenus.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-                const activeContent = document.querySelector(`.onglet .contenu[data-tab="${tabId}"]`);
-                activeContent.classList.add('active');
-
-                // Réégaliser les hauteurs après le changement d'onglet
-                setTimeout(equalizeHeights, 100); // Petit délai pour laisser le temps au contenu de s'afficher
-            });
+      // Equalizer les hauteurs des .contenu (desktop seulement)
+      if (isDesktop) {
+        document.querySelectorAll(selector).forEach(el => {
+          el.style.height = "";
         });
 
-        // Réégaliser les hauteurs en cas de redimensionnement de fenêtre
-        window.addEventListener('resize', equalizeHeights);
+        document.querySelectorAll(`${selector}.active`).forEach(el => {
+          const height = el.offsetHeight;
+          if (height > maxHeight) maxHeight = height;
+        });
+
+        document.querySelectorAll(selector).forEach(el => {
+          el.style.height = maxHeight + "px";
+        });
+      }
+
+      // Gestion du min-height de .onglet (version verrouillée)
+      const nomOnglet = document.querySelector(selectorForMobile);
+      if (nomOnglet) {
+        const nomOngletHeight = nomOnglet.offsetHeight;
+
+        if (!minHeightLocked) {
+          // Premier calcul : on stocke la valeur
+          lockedMinHeight = nomOngletHeight + 30;
+          minHeightLocked = true;
+        }
+
+        // Appliquer la valeur verrouillée
+        document.querySelectorAll(ongletSelector).forEach(onglet => {
+          onglet.style.minHeight = lockedMinHeight + "px";
+        });
+      }
+    }
+
+    function handleTabChange(onglet) {
+      const tabId = onglet.getAttribute("data-tab");
+
+      onglets.forEach(o => o.classList.remove("active"));
+      contenus.forEach(c => c.classList.remove("active"));
+
+      onglet.classList.add("active");
+      const activeContent = document.querySelector(`.onglet .contenu[data-tab="${tabId}"]`);
+      if (activeContent) {
+        activeContent.classList.add("active");
+        // Réégaliser seulement les hauteurs des contenus, pas le min-height
+        setTimeout(() => {
+          const selector = ".contenu";
+          let maxHeight = 0;
+
+          if (window.matchMedia("(min-width: 992px)").matches) {
+            document.querySelectorAll(selector).forEach(el => {
+              el.style.height = "";
+            });
+
+            document.querySelectorAll(`${selector}.active`).forEach(el => {
+              const height = el.offsetHeight;
+              if (height > maxHeight) maxHeight = height;
+            });
+
+            document.querySelectorAll(selector).forEach(el => {
+              el.style.height = maxHeight + "px";
+            });
+          }
+        }, 50);
+      }
+    }
+
+    // Événements
+    onglets.forEach(onglet => {
+      onglet.addEventListener("click", () => handleTabChange(onglet));
     });
+
+    equalizeHeights();
+    window.addEventListener("resize", () => {
+      // Réinitialiser le verrouillage en cas de redimensionnement significatif
+      if (window.matchMedia("(min-width: 992px)").matches) {
+        minHeightLocked = false;
+        equalizeHeights();
+      }
+    });
+
+    window.addEventListener("load", equalizeHeights);
+  });
 })(jQuery);

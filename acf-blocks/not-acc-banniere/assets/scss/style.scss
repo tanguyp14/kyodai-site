@@ -1,0 +1,49 @@
+@import "../../../../src/scss/abstracts/all.scss";
+
+.not-acc-banniere {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .container-images {
+      max-width: 40vw;
+      margin-top: 5vw;
+      display: flex;
+      position: relative;
+      @include breakpoints(lg) {
+          max-width: 30vw;
+    }
+    span {
+      display: flex;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      &.left {
+        width: 20%;
+        left: -16%;
+        top: 25%;
+        z-index: 2;
+        position: absolute;
+      }
+
+      &.center {
+        width: 60vw;
+        z-index: 1;
+      }
+
+      &.right {
+        width: 20%;
+        z-index: 2;
+        right: -1%;
+        position: absolute;
+      }
+    }
+  }
+}
