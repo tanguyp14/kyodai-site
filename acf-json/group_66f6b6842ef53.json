@@ -110,6 +110,13 @@
                 "operator": "==",
                 "value": "acf\/acc-banniere"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/not-acc-banniere"
+            }
         ]
     ],
     "menu_order": 0,
@@ -121,5 +128,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727444731
+    "modified": 1758788953
 }

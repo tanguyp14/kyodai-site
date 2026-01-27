@@ -20,7 +20,7 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
-  <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfq53cqAAAAAAxaMZA1_2vSeORyAczZQeDTY9LZ"></script> -->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lfq53cqAAAAAAxaMZA1_2vSeORyAczZQeDTY9LZ"></script>
 
 	<?php wp_head(); ?>
 
