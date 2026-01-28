@@ -202,3 +202,114 @@ function sanitize_svg($file)
 	return $file;
 }
 add_filter('wp_handle_upload', 'sanitize_svg');
+
+/**
+ * Corrige la vérification du type MIME pour les SVG
+ */
+function fix_svg_mime_type($data, $file, $filename, $mimes)
+{
+	$ext = pathinfo($filename, PATHINFO_EXTENSION);
+	if ($ext === 'svg') {
+		$data['ext'] = 'svg';
+		$data['type'] = 'image/svg+xml';
+	}
+	return $data;
+}
+add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 4);
+
+/**
+ * Récupère les dimensions des SVG pour la médiathèque
+ */
+function get_svg_dimensions($response, $attachment, $meta)
+{
+	if (isset($response['mime']) && $response['mime'] === 'image/svg+xml') {
+		$svg_path = get_attached_file($attachment->ID);
+		if (file_exists($svg_path)) {
+			$svg = simplexml_load_file($svg_path);
+			if ($svg) {
+				$attributes = $svg->attributes();
+				$width = 0;
+				$height = 0;
+
+				if (isset($attributes->width, $attributes->height)) {
+					$width = intval($attributes->width);
+					$height = intval($attributes->height);
+				} elseif (isset($attributes->viewBox)) {
+					$viewbox = explode(' ', $attributes->viewBox);
+					if (count($viewbox) === 4) {
+						$width = intval($viewbox[2]);
+						$height = intval($viewbox[3]);
+					}
+				}
+
+				if ($width && $height) {
+					$response['width'] = $width;
+					$response['height'] = $height;
+					$response['sizes'] = array(
+						'full' => array(
+							'url' => $response['url'],
+							'width' => $width,
+							'height' => $height,
+							'orientation' => $width > $height ? 'landscape' : 'portrait'
+						)
+					);
+				}
+			}
+		}
+	}
+	return $response;
+}
+add_filter('wp_prepare_attachment_for_js', 'get_svg_dimensions', 10, 3);
+
+/**
+ * Affiche les SVG dans la médiathèque WordPress
+ */
+function display_svg_in_media_library()
+{
+	echo '<style>
+		.attachment-266x266, .thumbnail img[src$=".svg"] {
+			width: 100% !important;
+			height: auto !important;
+		}
+		.attachment img[src$=".svg"] {
+			width: 100%;
+			height: auto;
+		}
+	</style>';
+}
+add_action('admin_head', 'display_svg_in_media_library');
+
+/**
+ * Génère les métadonnées pour les SVG uploadés
+ */
+function generate_svg_metadata($metadata, $attachment_id)
+{
+	$file = get_attached_file($attachment_id);
+	$ext = pathinfo($file, PATHINFO_EXTENSION);
+
+	if ($ext === 'svg') {
+		$svg = simplexml_load_file($file);
+		if ($svg) {
+			$attributes = $svg->attributes();
+			$width = 0;
+			$height = 0;
+
+			if (isset($attributes->width, $attributes->height)) {
+				$width = intval($attributes->width);
+				$height = intval($attributes->height);
+			} elseif (isset($attributes->viewBox)) {
+				$viewbox = explode(' ', $attributes->viewBox);
+				if (count($viewbox) === 4) {
+					$width = intval($viewbox[2]);
+					$height = intval($viewbox[3]);
+				}
+			}
+
+			$metadata['width'] = $width;
+			$metadata['height'] = $height;
+			$metadata['file'] = basename($file);
+		}
+	}
+	return $metadata;
+}
+add_filter('wp_generate_attachment_metadata', 'generate_svg_metadata', 10, 2);

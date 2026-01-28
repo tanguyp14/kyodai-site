@@ -8,6 +8,9 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  @include breakpoints(sm, max) {
+    height: 25vh;
+  }
 
   .container-images {
       max-width: 40vw;

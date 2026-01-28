@@ -7,28 +7,32 @@ extract($fields);
     <a href="/prestation" class="go_back">
         <span class="text_go_back">Retour aux prestations</span>
     </a>
-    <div class="left">
-        <div class="tylt_info_prestation_images" data-aos="fade-right">
-            <?php foreach ($images as $image_id): ?>
-                <div class="tylt_info_prestation_images_image">
-                    <?php echo wp_get_attachment_image($image_id, 'full'); ?>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <div class="arrows">
-            <span class="prev_arrow"> </span>
-            <span class="next_arrow"> </span>
-        </div>
+    <div class="title_block">
+        <h1><?php echo $titre; ?></h1>
+        <?php if ($sous_titre !== ''): ?>
+            <span class="sous_titre"><?php echo $sous_titre; ?></span>
+        <?php endif; ?>
     </div>
-    <div class="tylt_info_prestation_infos" data-aos="fade-left">
-        <div class="titlre_block">
-            <h1><?php echo $titre; ?></h1>
-            <?php if ($sous_titre !== ''): ?>
-                <span class="sous_titre"><?php echo $sous_titre; ?></span>
-            <?php endif; ?>
+    <div class="card">
+        <div class="card_content">
+            <div class="card_images">
+                <div class="tylt_info_prestation_images" data-aos="fade-right">
+                    <?php foreach ($images as $image_id): ?>
+                        <div class="tylt_info_prestation_images_image">
+                            <?php echo wp_get_attachment_image($image_id, 'full'); ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="arrows">
+                    <span class="prev_arrow"> </span>
+                    <span class="next_arrow"> </span>
+                </div>
+            </div>
+            <div class="card_text">
+                <div class="texte"><?php echo $zone_de_texte; ?></div>
+                <a alt="Demander un devis" class="button-devis" href="/devis">Demander mon devis</a>
+            </div>
         </div>
-        <div class="texte"><?php echo $zone_de_texte; ?></div>
-        <a alt="Demander un devis" class="button-devis" href="/devis">Demander mon devis</a>
     </div>
 
     <div class="tylt_lightbox">

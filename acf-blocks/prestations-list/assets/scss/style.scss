@@ -1,34 +1,157 @@
 @import "../../../../src/scss/abstracts/all.scss";
 
+.prestations-section {
+  position: relative;
+  width: 100%;
+}
+
 .prestations-filter {
-  margin: 16vh auto 40px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  button {
-    text-transform: uppercase;
-    font-variation-settings: "wght" 500;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    color: $orange;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    &.active,
-    &:hover {
-      color: $blue;
-      font-variation-settings: "wght" 900;
-      cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+
+  &.is-sticky {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    @include breakpoints(sm, max) {
+      top: 0px;
     }
   }
+
+  .filter-header {
+    width: 100%;
+    margin-bottom: 0;
+
+    .filter-btn-all {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background-color: $orange;
+      border: 3px solid $black;
+      border-bottom: none;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      .filter-header-text {
+        font-size: 30px;
+        font-variation-settings: "wght" 700;
+        text-transform: uppercase;
+        color: $white;
+      }
+    }
+  }
+
+  .filter-categories {
+    width: 100%;
+    display: flex;
+    border: 3px solid $black;
+
+    .filter-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 10px;
+      background-color: $orange;
+      border: none;
+      border-right: 3px solid $black;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      .filter-btn-icon {
+        width: 52px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.5s ease;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .filter-btn-text {
+        font-size: 30px;
+        font-variation-settings: "wght" 600;
+        text-transform: uppercase;
+        color: $black;
+        text-align: left;
+        line-height: 1.3;
+      }
+
+      &:hover,
+      &.active {
+        background-color: darken($orange, 15%);
+        .filter-btn-icon {
+          rotate: 5deg;
+        }
+      }
+    }
+  }
+
   @include breakpoints(sm, max) {
-    flex-direction: column;
+    .filter-header {
+      .filter-btn-all {
+        .filter-header-text {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .filter-categories {
+      flex-wrap: wrap;
+
+      .filter-btn {
+        flex-basis: 50%;
+        border-right: none;
+        border-bottom: 3px solid $black;
+        padding: 10px 8px;
+        gap: 6px;
+
+        .filter-btn-icon {
+          width: 28px;
+          height: 28px;
+        }
+
+        .filter-btn-text {
+          font-size: 12px;
+          line-height: 1.2;
+        }
+
+        &:nth-child(odd) {
+          border-right: 3px solid $black;
+        }
+
+        &:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
 
 #prestations-list-container {
-  min-height: 1200px;
+  min-height: 400px;
   max-width: 1200px;
   margin: auto;
+  margin-top: 10vh;
   .prestations-list {
     margin: 0;
     padding: 0;
@@ -106,7 +229,7 @@
         border: 5px solid $black;
         .prestation-title {
           color: $white;
-        //   text-align: left;
+          //   text-align: left;
         }
         .prestation-price {
           opacity: 1;
@@ -119,7 +242,7 @@
         }
       }
     }
-    @include breakpoints(sm, max){
+    @include breakpoints(sm, max) {
       flex-direction: column;
       .prestation-item {
         width: 100%;
@@ -128,7 +251,6 @@
         border: 5px solid $black;
         .prestation-title {
           color: $white;
-        //   text-align: left;
         }
         .prestation-price {
           opacity: 1;
@@ -139,6 +261,71 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+.under_card {
+  width: 100%;
+  background-image: url("../../../../dist/image/TRAMBLANC.png");
+  background-size: cover;
+  background-position: bottom center;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .texte {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    
+    .infos {
+      color: $white;
+      font-size: 20px;
+      margin: 0;
+      color: $black;
+
+      strong {
+        text-transform: uppercase;
+        font-family: $secondary-font-family;
+      }
+    }
+
+    .link {
+      a {
+        display: inline-block;
+        background-color: $orange;
+        color: $white;
+        text-decoration: none;
+        padding: 2px 30px;
+        border: 3px solid $black;
+        font-size: 23px;
+        font-variation-settings: "wght" 700;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+  @include breakpoints(sm, max) {
+    padding: 30px 15px;
+
+    .texte {
+      .infos {
+        font-size: 14px;
+      }
+
+      .link a {
+        font-size: 14px;
+        padding: 10px 20px;
       }
     }
   }

@@ -4,6 +4,7 @@ extract($fields);
 ?>
 
 <section class="tylt_onglets">
+    <h2 class="onglets_titre">Nos options</h2>
     <div class="nom_onglet">
         <?php foreach ($prestation_detail as $index => $presta_de) : extract($presta_de) ?>
             <div class="nom <?php echo $nom_onglet ?>" data-tab="<?php echo $index ?>">

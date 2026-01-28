@@ -18,7 +18,7 @@ const { src, dest, series, watch, parallel } = require('gulp'),
 
 const PRODUCTION = yargs.argv.prod;
 const server = browserSync.create();
-const url = 'http://Kyodai.local/';
+const url = 'http://kyodai.local/';
 const paths = {
   styles: {
     src: ["./src/scss/*.scss", "./src/scss/**/*.scss"],
@@ -150,7 +150,8 @@ function start(done) {
   server.init({
     proxy: url,
     open: true,
-    ghostMode: false
+    ghostMode: false,
+    host: '192.168.1.65'
   });
   done();
 }

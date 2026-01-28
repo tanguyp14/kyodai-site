@@ -1,183 +1,272 @@
 @import "../../../../src/scss/abstracts/all.scss";
 
-
 .tylt_info_prestation {
   max-width: 1200px;
   display: flex;
+  flex-direction: column;
   margin: auto;
   margin-top: 15vh;
-  gap: 20px;
   padding: 5px;
   position: relative;
-  .go_back {
-  max-width: 1200px;
-  text-align: left;
-  margin: auto;
-  position: absolute;
-  top: -50px;
-  display: flex;
-  width: fit-content;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  text-transform: uppercase;
-  color: $black;
-  &:hover{
-    color: $orange;
-    font-weight: 800;
-  }
-}
+
   @include breakpoints(sm, max) {
-    flex-direction: column-reverse;
-    margin-top: 100px;
-    gap: 70px;
+    padding: 0px 10px;
   }
-  .left {
-    width: 50%;
-    position: relative;
-    &:hover {
-      .arrows {
-        opacity: 1;
-      }
-      .tylt_info_prestation_images:after {
-        z-index: -1;
-      }
-    }
-    @include breakpoints(sm, max) {
-      width: 100%;
-    }
-    .tylt_info_prestation_images {
-      height: 300px;
-      position: relative;
-      background-color: $white;
 
-      &:after {
-        content: "";
-        position: absolute;
-        width: 500px;
-        aspect-ratio: 494/319;
-        display: flex;
-        left: -412px;
-        bottom: -70px;
-        background-image: url("../MAIN_ORANGE.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-
-      .slick-track {
-        height: 300px;
-      }
-      &_image {
-        border: 5px solid $black;
-        border-radius: 15px;
-        overflow: hidden;
-        width: 100%;
-        height: 300px;
-        background-color: $white;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-    .arrows {
-      z-index: 10;
-      top: 0;
-      opacity: 0;
-      transition: all 0.2s ease-in-out;
-      span {
-        display: flex;
-        width: 30px;
-        height: 30px;
-        background-image: url("../FLECHE.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        top: calc(50% - 15px);
-        cursor: pointer;
-        &.prev_arrow {
-          left: 10px;
-          rotate: 180deg;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            left: 8px;
-          }
-        }
-        &.next_arrow {
-          right: 10px;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            right: 8px;
-          }
-        }
-      }
-    }
-  }
-  &_infos {
-    width: 50%;
+  .go_back {
+    position: absolute;
+    top: -50px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    background-color: $black;
+    color: $white;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-variation-settings: "wght" 400;
     @include breakpoints(sm, max) {
-      width: 70%;
-      min-width: 370px;
-      gap: 10px;
-      margin: auto;
+      left: 10px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-image: url("../FLECHE.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      rotate: 180deg;
+    }
+    &:hover {
+      background-color: $orange;
+      color: $white;
+      font-variation-settings: "wght" 800;
+    }
+  }
+
+  .title_block {
+    background-color: $blue;
+    color: $white;
+    padding: 8px 15px;
+    border: 5px solid $black;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    box-shadow: 5px 5px 0px $black;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2.5px;
+      left: -2.5px;
+      transform: translate(-50%, 50%);
+      width: 60px;
+      height: 60px;
+      background-image: url("../ETOILE-BLOC-PRODUIT.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 10;
+      transform-origin: center center;
+      animation: spin-star 5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+      @include breakpoints(sm, max) {
+        left: -2.5px;
+        width: 50px;
+        height: 50px;
+      }
     }
 
     h1 {
-      color: $blue;
+      color: $white;
       text-transform: uppercase;
       margin: 0;
       font-size: 30px;
+      font-family: $primary-font-family;
+      &::after {
+        content: " :";
+      }
     }
     .sous_titre {
-      font-size: 20px;
-      color: $blue;
+      font-size: 16px;
+      color: $white;
       text-transform: uppercase;
       font-weight: 800;
     }
-    .texte {
-      p {
-        margin-bottom: 5px;
+  }
+  .card {
+    background-color: white;
+    border: 5px solid $black;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: none;
+     box-shadow: 5px 5px 0px $black;
+
+    .card_content {
+      display: flex;
+      align-items: stretch;
+
+      @include breakpoints(sm, max) {
+        flex-direction: column;
+      }
+    }
+
+    .card_images {
+      position: relative;
+      width: 45%;
+      flex-shrink: 0;
+
+      @include breakpoints(sm, max) {
+        width: 100%;
+        height: 300px;
+      }
+
+      &:hover {
+        .arrows {
+          opacity: 1;
+        }
+      }
+
+      .tylt_info_prestation_images {
+        height: 100%;
+        position: relative;
+        background-color: $white;
+        overflow: hidden;
+        border-right: 5px solid $black;
+        @include breakpoints(sm, max) {
+          border-right: none;
+          border-bottom: 5px solid $black;
+        }
+
+        .slick-list,
+        .slick-track {
+          height: 100%;
+        }
+
+        .slick-slide {
+          height: 100%;
+          > div {
+            height: 100%;
+          }
+        }
+
+        &_image {
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          min-height: 250px;
+          background-color: $white;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .arrows {
+        z-index: 10;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+
         span {
-          font-weight: 800;
-          color: $orange;
+          display: flex;
+          width: 30px;
+          height: 30px;
+          background-image: url("../FLECHE.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: calc(50% - 15px);
+          cursor: pointer;
+
+          &.prev_arrow {
+            left: 10px;
+            rotate: 180deg;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              left: 8px;
+            }
+          }
+          &.next_arrow {
+            right: 10px;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              right: 8px;
+            }
+          }
         }
       }
     }
 
-    .button-devis {
-      background-color: $red;
-      padding: 5px 20px;
-      font-family: $secondary-font-family;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: $white;
-      width: fit-content;
-      border-radius: 20px;
-      border: 3px solid $black;
-      position: relative;
-      &:hover {
-        animation: giggle 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    .card_text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2%;
+      @include breakpoints(sm, max) {
+        padding: 15px;
       }
-      &:after {
-        content: "";
-        position: absolute;
-        width: 18px;
-        aspect-ratio: 29 / 30;
-        display: flex;
-        right: -10px;
-        bottom: -10px;
-        rotate: -15deg;
-        background-image: url("../SOURIS.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        animation: click 3s infinite ease-in-out alternate;
+
+      .texte {
+        color: $black;
+        p {
+          margin-bottom: 5px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          span {
+            font-weight: 800;
+            color: $red;
+          }
+        }
+      }
+
+      .button-devis {
+        font-size: 20px;
+        background-color: $red;
+        padding: 2px 25px 3px;
+        font-variation-settings: "wght" 700;
+        font-family: $primary-font-family;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white;
+        width: fit-content;
+        border-radius: 30px;
+        border: 3px solid $black;
+        align-self: center;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background-color: $blue;
+        font-variation-settings: "wght" 900;
+          
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 25px;
+          aspect-ratio: 29 / 30;
+          right: -10px;
+          bottom: -12px;
+          rotate: -15deg;
+          background-image: url('../SOURIS.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          animation: click 3s infinite ease-in-out alternate;
+        }
       }
     }
   }
+
   .tylt_lightbox {
     position: fixed;
     top: 0;
@@ -190,6 +279,7 @@
     opacity: 0;
     justify-self: center;
     align-items: center;
+
     &.active {
       z-index: 1000;
       opacity: 1;
@@ -197,11 +287,13 @@
         display: flex;
       }
     }
+
     &_slick {
       max-width: 1200px;
       overflow: hidden;
       margin: auto;
       padding: 20px;
+
       &_image {
         border: 5px solid $black;
         border-radius: 15px;
@@ -217,6 +309,7 @@
         }
       }
     }
+
     .arrows_light {
       display: none;
       position: absolute;
@@ -225,6 +318,7 @@
       transition: all 0.2s ease-in-out;
       width: 100%;
       height: 100%;
+
       span {
         display: flex;
         width: 30px;
@@ -235,6 +329,7 @@
         position: absolute;
         top: calc(50% - 15px);
         cursor: pointer;
+
         &.prev_arrow_light {
           left: 8%;
           rotate: 180deg;
@@ -246,5 +341,41 @@
         }
       }
     }
+  }
+}
+
+@keyframes spin-star {
+  0% {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+  20% {
+    transform: translate(-50%, 50%) rotate(360deg);
+  }
+  100% {
+    transform: translate(-50%, 50%) rotate(360deg);
+  }
+}
+
+@keyframes click {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  70% {
+    transform: translateY(0) translateX(0);
+  }
+  80% {
+    transform: translateY(-10px) translateX(-20px);
+  }
+  90% {
+    transform: translateY(-10px) translateX(-20px);
+    scale: 1;
+  }
+  95% {
+    transform: translateY(-10px) translateX(-20px);
+    scale: 0.9;
+  }
+  100% {
+    transform: translateY(-10px) translateX(-20px);
+    scale: 1;
   }
 }

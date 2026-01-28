@@ -3,7 +3,8 @@
 
 .call_formulaire {
     z-index: 10;
-    width: 90%;
+    width: 95%;
+    max-width: 1200px;
     aspect-ratio: 333 / 260;
     display: flex;
     justify-self: center;
@@ -13,7 +14,7 @@
     gap: 5%;
     
     @include breakpoints(sm) {
-        width: 70%;
+        width: 95%;
         aspect-ratio: 666 / 248;
         flex-direction: row;
     }
