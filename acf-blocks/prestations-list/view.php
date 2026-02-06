@@ -56,7 +56,7 @@ $categories = get_terms(array(
         $args = array(
             'post_type' => 'prestation',
             'posts_per_page' => -1,
-            'orderby' => 'rand'
+            'orderby' => 'DESC',
         );
         $prestations_query = new WP_Query($args);
 
@@ -99,52 +99,6 @@ $categories = get_terms(array(
         const categoryButtons = document.querySelectorAll('.filter-btn');
         const allButtons = [allButton, ...categoryButtons];
 
-        // Sticky filter avec JavaScript (contourne overflow-x: hidden)
-        const filter = document.querySelector('.prestations-filter');
-        const section = document.querySelector('.prestations-section');
-
-        if (filter && section) {
-            let placeholder = null;
-            let filterTop = filter.getBoundingClientRect().top + window.scrollY;
-            const filterHeight = filter.offsetHeight;
-
-            // Recalculer la position initiale au resize
-            window.addEventListener('resize', function() {
-                if (!filter.classList.contains('is-sticky')) {
-                    filterTop = filter.getBoundingClientRect().top + window.scrollY;
-                }
-            });
-
-            function handleSticky() {
-                const scrollY = window.scrollY;
-                const sectionBottom = section.getBoundingClientRect().bottom + scrollY;
-
-                if (scrollY >= filterTop && scrollY < sectionBottom - filterHeight) {
-                    if (!filter.classList.contains('is-sticky')) {
-                        filter.classList.add('is-sticky');
-                        if (!placeholder) {
-                            placeholder = document.createElement('div');
-                            placeholder.style.height = filterHeight + 'px';
-                            section.insertBefore(placeholder, filter);
-                        }
-                    }
-                } else {
-                    if (filter.classList.contains('is-sticky')) {
-                        filter.classList.remove('is-sticky');
-                        if (placeholder) {
-                            placeholder.remove();
-                            placeholder = null;
-                        }
-                        filterTop = filter.getBoundingClientRect().top + window.scrollY;
-                    }
-                }
-            }
-
-            window.addEventListener('scroll', handleSticky, {
-                passive: true
-            });
-        }
-
         function handleFilter(btn) {
             // Retirer la classe active de tous les boutons
             allButtons.forEach(b => b.classList.remove('active'));
@@ -154,6 +108,14 @@ $categories = get_terms(array(
 
             const category = btn.getAttribute('data-category');
             const container = document.getElementById('prestations-list-container');
+
+            // Remonter au niveau du filtre
+            const filterEl = document.querySelector('.prestations-filter');
+            if (filterEl) {
+                const offset = window.innerWidth >= 1024 ? 90 : 0;
+                const filterTop = filterEl.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: filterTop, behavior: 'smooth' });
+            }
 
             // Afficher un loader
             container.innerHTML = '<p class="loading"></p>';

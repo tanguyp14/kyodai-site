@@ -1,6 +1,12 @@
 (function ($) {
     $('document').ready(function () {
-        AOS.init();
+        AOS.init({
+            once: true,
+            offset: 0
+        });
+        window.addEventListener('load', function() {
+            AOS.refresh();
+        });
         $(window).scroll(function () {
             if (window.location.pathname === '/') {
                 if ($(window).scrollTop() >= 200) {

@@ -55,6 +55,7 @@ echo '<meta property="og:url" content="' . esc_url(home_url()) . '" />';
 			<span></span>
 			<span></span>
 		</span>
+		<span class="button_mobile-label">Menu</span>
 	<?php } ?>
 	<header id="masthead" class="header 
 	<?php

@@ -1,5 +1,5 @@
 @import "../../../../src/scss/abstracts/all.scss";
-$total-onglets: 5;
+$total-onglets: 10;
 
 .tylt_onglets {
   margin: 20vh auto;
@@ -21,7 +21,11 @@ $total-onglets: 5;
     text-transform: uppercase;
     width: fit-content;
     font-size: 34px;
-    border-radius: 7px;
+    border-radius: 15px;
+      @include breakpoints(sm, max) {
+    width: 100%;
+    text-align: center;
+  }
   }
   @include breakpoints(sm, max) {
     flex-direction: column;
@@ -166,7 +170,7 @@ $total-onglets: 5;
         }
         @include breakpoints(sm, max) {
           width: 100%;
-          max-height: 200px;
+          max-height: 250px;
         }
         img {
           width: 100%;

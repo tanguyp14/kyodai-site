@@ -14,3 +14,19 @@ main{
     max-width: 1920px;
     margin: 0 auto;
 }
+
+.prestation-mobile-logo {
+    display: none;
+
+    @include breakpoints(sm, max) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+
+        img {
+            height: 50px;
+            width: auto;
+        }
+    }
+}

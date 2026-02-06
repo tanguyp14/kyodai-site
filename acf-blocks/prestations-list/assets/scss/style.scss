@@ -12,17 +12,6 @@
   align-items: center;
   z-index: 10;
 
-  &.is-sticky {
-    position: fixed;
-    top: 90px;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    @include breakpoints(sm, max) {
-      top: 0px;
-    }
-  }
-
   .filter-header {
     width: 100%;
     margin-bottom: 0;
@@ -45,6 +34,10 @@
         font-variation-settings: "wght" 700;
         text-transform: uppercase;
         color: $white;
+      }
+      &:hover{
+        background-color: darken($orange, 15%);
+        letter-spacing: 2px;
       }
     }
   }
