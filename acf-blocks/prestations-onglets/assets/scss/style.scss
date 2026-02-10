@@ -2,7 +2,7 @@
 $total-onglets: 10;
 
 .tylt_onglets {
-  margin: 20vh auto;
+  margin: 10vh auto;
   display: flex;
   max-width: 1200px;
   color: white;
@@ -11,21 +11,77 @@ $total-onglets: 10;
   min-height: 340px;
   padding: 10px;
 
+  .main_qui_pointe {
+    position: absolute;
+    left: -370px;
+    top: -50px;
+    transform: translateY(-50%);
+    width: 371px;
+    height: auto;
+    animation: main 5s infinite ease-in-out;
+    @media (min-width: 1921px) {
+      display: none;
+    }
+    @include breakpoints(sm, max) {
+      display: none;
+    }
+  }
+
+  .onglets_header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+    @include breakpoints(sm, max) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .visuels_mobile {
+      display: none;
+      @include breakpoints(sm, max) {
+        display: flex;
+        gap: 8px;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        bottom: -2px;
+        img {
+          width: 60px;
+          height: auto;
+          object-fit: contain;
+          position: relative;
+          &:nth-child(1) {
+            transform: rotate(10deg);
+            z-index: 16;
+            animation: crayon infinite 3s ease-in-out;
+            right: -20px;
+          }
+          &:nth-child(2) {
+            z-index: 2;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+
   .onglets_titre {
     background-color: $black;
     color: #fff;
     font-family: $secondary-font-family;
     text-align: left;
     padding: 10px 20px;
-    margin: 0 0 20px 0;
+    margin: 0;
     text-transform: uppercase;
     width: fit-content;
     font-size: 34px;
     border-radius: 15px;
-      @include breakpoints(sm, max) {
-    width: 100%;
-    text-align: center;
-  }
+    @include breakpoints(sm, max) {
+      width: 100%;
+      text-align: center;
+    }
   }
   @include breakpoints(sm, max) {
     flex-direction: column;
@@ -62,6 +118,34 @@ $total-onglets: 10;
       gap: 8px;
       justify-content: flex-start;
     }
+    .visuels_desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      margin-right: 10vw;
+      @include breakpoints(sm, max) {
+        display: none;
+      }
+      img {
+        height: auto;
+        object-fit: contain;
+        position: relative;
+        &:nth-child(1) {
+          width: 80px;
+          transform: rotate(10deg);
+          z-index: 16;
+          animation: crayon infinite 3s ease-in-out;
+          right: -20px;
+        }
+        &:nth-child(2) {
+          z-index: 2;
+          width: 150px;
+        }
+      }
+    }
     .nom {
       width: fit-content;
       padding: 5px 30px 15px 30px;
@@ -79,7 +163,9 @@ $total-onglets: 10;
         &:nth-child(#{$i}) {
           left: -25px * ($i - 1);
           z-index: $total-onglets + 3 - $i;
-          transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), rotate 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition:
+            left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            rotate 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           &:hover {
             left: -20px * ($i - 1);
           }
@@ -200,7 +286,16 @@ $total-onglets: 10;
             text-align: center;
             width: fit-content;
             padding: 5px 15px;
-            border-radius: 30px;
+            border-radius: 15px;
+            p {
+              margin-left: 0px;
+              &:before {
+                display: none;
+              }
+              em{
+                font-size: 12px;
+              }
+            }
           }
         }
         p {
@@ -293,5 +388,29 @@ $total-onglets: 10;
     rotate: 0deg;
     top: 0px;
     left: 0px;
+  }
+}
+
+@keyframes crayon {
+  0% {
+    transform: rotate(-10deg) translateY(25px);
+  }
+  50% {
+    transform: rotate(10deg) translateY(15px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(25px);
+  }
+}
+
+@keyframes main {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
   }
 }

@@ -4,13 +4,24 @@ extract($fields);
 ?>
 
 <section class="tylt_onglets">
-    <h2 class="onglets_titre">Nos options</h2>
+    <div class="onglets_header">
+        <div class="visuels_mobile">
+            <img src="<?php echo get_template_directory_uri(); ?>/acf-blocks/prestations-onglets/assets/img/crayon.svg" alt="Crayon">
+            <img src="<?php echo get_template_directory_uri(); ?>/acf-blocks/prestations-onglets/assets/img/PM.svg" alt="PM">
+        </div>
+        <h2 class="onglets_titre">Nos options</h2>
+    </div>
+    <img class="main_qui_pointe" src="<?php echo get_template_directory_uri(); ?>/acf-blocks/prestations-onglets/assets/img/MAIN QUI POINTE.svg" alt="Main qui pointe">
     <div class="nom_onglet">
         <?php foreach ($prestation_detail as $index => $presta_de) : extract($presta_de) ?>
             <div class="nom <?php echo $nom_onglet ?>" data-tab="<?php echo $index ?>">
                 <?php echo $nom_onglet ?>
             </div>
         <?php endforeach; ?>
+        <div class="visuels_desktop">
+            <img src="<?php echo get_template_directory_uri(); ?>/acf-blocks/prestations-onglets/assets/img/crayon.svg" alt="Crayon">
+            <img src="<?php echo get_template_directory_uri(); ?>/acf-blocks/prestations-onglets/assets/img/PM.svg" alt="PM">
+        </div>
     </div>
     <div class="onglet">
         <?php foreach ($prestation_detail as $index => $presta_de) : extract($presta_de) ?>
@@ -44,9 +55,7 @@ extract($fields);
                             </div>
                         <?php endif; ?>
                         <?php if ($prix != '') : ?>
-                            <div class="format">
-                                <h3 class="prix"><?php echo $prix ?></h3>
-                            </div>
+                            <h3 class="prix"><?php echo $prix ?></h3>
                         <?php endif; ?>
                     </div>
                     <?php if ($kayou != '') : ?>
