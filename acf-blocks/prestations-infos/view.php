@@ -22,16 +22,10 @@ if ($categories && !is_wp_error($categories)) {
     <div class="card">
         <div class="card_content">
             <div class="card_images">
-                <div class="tylt_info_prestation_images" data-aos="fade-right">
-                    <?php foreach ($images as $image_id): ?>
-                        <div class="tylt_info_prestation_images_image">
-                            <?php echo wp_get_attachment_image($image_id, 'full'); ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="arrows">
-                    <span class="prev_arrow"> </span>
-                    <span class="next_arrow"> </span>
+                <div class="tylt_info_prestation_image" data-aos="fade-right">
+                    <?php if (!empty($images)): ?>
+                        <?php echo wp_get_attachment_image($images[0], 'full'); ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="card_text">
@@ -47,17 +41,4 @@ if ($categories && !is_wp_error($categories)) {
         </div>
     </div>
 
-    <div class="tylt_lightbox">
-        <div class="tylt_lightbox_slick">
-            <?php foreach ($images as $image_id): ?>
-                <div class="tylt_lightbox_slick_image">
-                    <?php echo wp_get_attachment_image($image_id, 'full'); ?>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <div class="arrows_light">
-            <span class="prev_arrow_light"> </span>
-            <span class="next_arrow_light"> </span>
-        </div>
-    </div>
 </section>

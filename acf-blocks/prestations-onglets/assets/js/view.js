@@ -18,19 +18,27 @@
       let maxHeight = 0;
       const isDesktop = window.matchMedia("(min-width: 992px)").matches;
 
-      // Equalizer les hauteurs des .contenu (desktop seulement)
+      // Equaliser les hauteurs des .contenu (desktop seulement)
       if (isDesktop) {
+        // Reset les hauteurs pour mesurer la hauteur naturelle
         document.querySelectorAll(selector).forEach(el => {
           el.style.height = "";
         });
 
-        document.querySelectorAll(`${selector}.active`).forEach(el => {
-          const height = el.offsetHeight;
+        // Mesurer TOUS les contenus pour trouver le plus haut
+        document.querySelectorAll(selector).forEach(el => {
+          const height = el.scrollHeight;
           if (height > maxHeight) maxHeight = height;
         });
 
+        // Appliquer la hauteur max à tous les contenus
         document.querySelectorAll(selector).forEach(el => {
           el.style.height = maxHeight + "px";
+        });
+      } else {
+        // En mobile, reset les hauteurs fixes
+        document.querySelectorAll(selector).forEach(el => {
+          el.style.height = "";
         });
       }
 
@@ -62,26 +70,6 @@
       const activeContent = document.querySelector(`.onglet .contenu[data-tab="${tabId}"]`);
       if (activeContent) {
         activeContent.classList.add("active");
-        // Réégaliser seulement les hauteurs des contenus, pas le min-height
-        setTimeout(() => {
-          const selector = ".contenu";
-          let maxHeight = 0;
-
-          if (window.matchMedia("(min-width: 992px)").matches) {
-            document.querySelectorAll(selector).forEach(el => {
-              el.style.height = "";
-            });
-
-            document.querySelectorAll(`${selector}.active`).forEach(el => {
-              const height = el.offsetHeight;
-              if (height > maxHeight) maxHeight = height;
-            });
-
-            document.querySelectorAll(selector).forEach(el => {
-              el.style.height = maxHeight + "px";
-            });
-          }
-        }, 50);
       }
     }
 
@@ -90,6 +78,25 @@
       onglet.addEventListener("click", () => handleTabChange(onglet));
     });
 
+    function positionVisuelsDesktop() {
+      const nomOngletContainer = document.querySelector(".nom_onglet");
+      if (!nomOngletContainer) return;
+      const visuels = nomOngletContainer.querySelector(".visuels_desktop");
+      if (!visuels) return;
+      const noms = nomOngletContainer.querySelectorAll(".nom");
+      if (noms.length === 0) return;
+
+      const lastNom = noms[noms.length - 1];
+      const containerRect = nomOngletContainer.getBoundingClientRect();
+      const lastNomRect = lastNom.getBoundingClientRect();
+      const leftFromLastNom = lastNomRect.right - containerRect.left;
+      const halfContainer = containerRect.width * 0.5;
+      const leftPos = Math.max(leftFromLastNom, halfContainer);
+
+      visuels.style.left = leftPos + "px";
+    }
+
+    positionVisuelsDesktop();
     equalizeHeights();
     window.addEventListener("resize", () => {
       // Réinitialiser le verrouillage en cas de redimensionnement significatif
@@ -97,8 +104,12 @@
         minHeightLocked = false;
         equalizeHeights();
       }
+      positionVisuelsDesktop();
     });
 
-    window.addEventListener("load", equalizeHeights);
+    window.addEventListener("load", () => {
+      equalizeHeights();
+      positionVisuelsDesktop();
+    });
   });
 })(jQuery);

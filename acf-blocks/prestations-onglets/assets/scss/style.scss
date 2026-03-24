@@ -120,12 +120,10 @@ $total-onglets: 10;
     }
     .visuels_desktop {
       position: absolute;
-      right: 0;
       bottom: 0;
       display: flex;
       gap: 8px;
       align-items: flex-end;
-      margin-right: 10vw;
       @include breakpoints(sm, max) {
         display: none;
       }
